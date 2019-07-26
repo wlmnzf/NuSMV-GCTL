@@ -24,7 +24,355 @@ static char rcsid[] UTIL_UNUSED = "$Id: ModelChecking.c,v 1.0.3 2008/12/05 08:55
 /*---------------------------------------------------------------------------*/
 /* Variable declarations                                                     */
 /*---------------------------------------------------------------------------*/
+char *myitoa(int num,char *str,int radix)
+{
+    /* 索引表 */
+    char index[]="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    unsigned unum; /* 中间变量 */
+    int i=0,j,k;
+    char temp;
+    /* 确定unum的值 */
+    if(radix==10&&num<0) /* 十进制负数 */
+    {
+        unum=(unsigned)-num;
+        str[i++]='-';
+    }
+    else unum=(unsigned)num; /* 其它情况 */
+    /* 逆序 */
+    do
+    {
+        str[i++]=index[unum%(unsigned)radix];
+        unum/=radix;
+    }while(unum);
+    str[i]='\0';
+    /* 转换 */
+    if(str[0]=='-') k=1; /* 十进制负数 */
+    else k=0;
+    /* 将原来的“/2”改为“/2.0”，保证当num在16~255之间，radix等于16时，也能得到正确结果 */
 
+    for(j=k;j<=(i-k-1)/2.0;j++)
+    {
+        temp=str[j];
+        str[j]=str[i-j-1];
+        str[i-j-1]=temp;
+    }
+    return str;
+}
+
+char *search_str(int n)
+{
+    char *enum_kv[167]={
+            "NUSMV_STATEMENTS_SYMBOL_FIRST = NUSMV_CORE_SYMBOL_FIRST",
+
+
+            "TRANS", /* 101 */
+            "INIT",
+            "INVAR",
+            "ASSIGN",
+            "FAIRNESS",
+            "JUSTICE",
+            "COMPASSION",
+            "SPEC",
+            "LTLSPEC",
+            /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+            "CTLGSPEC",/* 110 */
+            /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+            "PSLSPEC", /* 110 */
+            "INVARSPEC",
+            "COMPUTE",
+            "DEFINE",
+            "ISA",
+            "GOTO",
+            "CONSTRAINT",
+            "MODULE",
+            "PROCESS",
+            "MODTYPE",
+            "LAMBDA", /* 120 */
+            "CONSTANTS",
+
+            /* To be moved elsewhere */
+            "PRED",
+            "PREDS_LIST",
+            "MIRROR",
+
+
+            "NUSMV_STATEMENTS_SYMBOL_LAST",
+            /* ---------------------------------------------------------------------- */
+
+
+            /* ---------------------------------------------------------------------- */
+            "NUSMV_EXPR_SYMBOL_FIRST",
+
+            "FAILURE",
+            "CONTEXT",//131
+            "EU",
+            "AU",
+            "EBU",
+            "ABU",
+            "MINU",
+            "MAXU",
+            "VAR",
+            "IVAR", /* 140 */
+            "BOOLEAN",
+            "ARRAY",
+            "OF",
+            "SCALAR",
+            "CONS",
+            "BDD", /* 145 */
+            "SEMI",
+             "LP",
+  "RP",
+  "LB",
+  "RB",//150
+  "LCB",
+  "RCB",
+            "EQDEF",
+            "TWODOTS",
+            "FALSEEXP",
+            "TRUEEXP", /* 150 */
+            "SELF",
+            "CASE",
+            "ESAC",
+            "COLON",
+            "IFTHENELSE",
+              "INCONTEXT",
+            "SIMPWFF", /* 155 */
+            "LTLWFF",
+            "CTLWFF",
+            /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+            "CTLGWFF",
+            /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+                        "COMPWFF",
+            "ATOM", /* 160 */
+            "NUMBER",//161
+            "COMMA",
+            "IMPLIES",
+            "IFF",
+            "OR",
+            "XOR",
+            "XNOR",
+            "AND",
+            "NOT",//169
+            "EX",
+            "AX",
+            "EF",//172
+            "AF",
+            "EG",
+            "AG",
+            "EE",
+ "AA",
+            "SINCE",
+            "UNTIL",
+            "TRIGGERED",
+            "RELEASES",
+            "EBF", /* 180 */
+            "EBG",
+            "ABF",
+            "ABG",
+              /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+  "EGX",
+  "EGG",
+  "EGU",
+  "EGF",
+  "AGX",
+  "AGG",
+  "AGU",
+  "AGF",
+  /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+   "BUNTIL",
+  "MMIN",
+  "MMAX",
+            "OP_NEXT",
+            "OP_GLOBAL",
+            "OP_FUTURE",
+            "OP_PREC",
+            "OP_NOTPRECNOT",
+            "OP_HISTORICAL",
+            "OP_ONCE",
+            "EQUAL",//191
+            "NOTEQUAL",
+            "LT",
+            "GT",
+            "LE",
+            "GE",
+            "UNION",
+            "SETIN",
+            "MOD",
+            "PLUS", /* 200 */
+            "MINUS",
+            "TIMES",
+            "DIVIDE",
+            "UMINUS",
+            "NEXT", /* 205 */
+            "SMALLINIT",
+            "DOT",
+            "BIT",
+            "RANGE",
+            "WORD", /* identifies expressions and types */
+            "INTEGER",
+            "REAL",
+
+            "NUMBER_WORD", /* identifies constants */
+            "NUMBER_FRAC",
+            "NUMBER_REAL",
+            "NUMBER_EXP",
+            "LSHIFT",
+            "RSHIFT", /* 220 */
+            "LROTATE",
+            "RROTATE",
+            "BIT_SELECTION",
+            "CONCATENATION",
+            "CAST_BOOL",
+            "CAST_WORD1",
+       /* 230 extend the width of a word (signed or unsigned) */
+            "WORDARRAY",
+            "WAREAD",
+            "WAWRITE",
+           
+  /* Mathsat symbols */
+ "SLT", /* signed less then */
+  "SLE", /* signed less or equal */
+  "SGT", /* signed greater then */
+  "SGE", /* signed greater or equal */
+  "SIGN_EXTEND", /* sign extend */
+
+            "NUSMV_EXPR_SYMBOL_LAST",
+            /* ---------------------------------------------------------------------- */
+
+            "NUSMV_CORE_SYMBOL_LAST",
+    };
+
+    if(n>=100&&n<=266)
+    {
+        return enum_kv[n-100];
+    }
+    else
+    {
+        return "";
+    }
+
+}
+
+
+//TODO:boolean,array类型的暂未支持，目前支持number类型的
+static int ind;
+
+
+
+void bst_print_dot_aux(struct node* node, FILE* stream,char* last_str,int index)
+{
+    static int nullcount = 0;
+    char *inttype=NULL;
+    char strtype[1000];
+    char buffer[100];
+    char total_str[2000];
+    int span=0;
+    node_val *nv;
+    strcpy(total_str,"");
+
+
+    switch(node->type) {
+
+//        case CONTEXT:
+//        case AND:
+//        case OR:
+//        case XOR:
+//        case XNOR:
+//        case NOT:
+//        case IMPLIES:
+//        case IFF:
+//        case EX:
+//        case AX:
+//        case EF:
+//        case AG:
+//        case AF:
+//        case EG:
+//        case EU:
+//        case AU:
+//        case EBU:
+//        case ABU:
+//        case EBF:
+//        case ABF:
+//        case EBG:
+//        case ABG:
+        //
+
+
+        case ATOM:
+//             nv=(node_val*)(node->left.nodetype);
+            strcpy(strtype,node->left.strtype->text);
+            fprintf(stream, "   \"%d : %s\" -> \"%d : %s\";\n",index, last_str,++ind, strtype);
+            break;
+        case NUMBER:
+//            nv=(node_val*)(node->left.nodetype);
+            inttype=myitoa(node->left.inttype,buffer,10);
+            fprintf(stream, "   \"%d : %s\" -> \"%d : 【%s】\";\n", index,last_str,++ind, inttype);
+            break;
+
+//
+//        case FAILURE:
+//        case TRUEEXP:
+//        case FALSEEXP:
+//        case SELF:
+//        case BOOLEAN:
+//        case DOT:
+//        case ARRAY:
+//        case NUMBER_UNSIGNED_WORD:
+//        case UWCONST:
+//        case SWCONST:
+//        case NUMBER_SIGNED_WORD:
+//        case NUMBER_FRAC:
+//        case NUMBER_REAL:
+//        case NUMBER_EXP:
+//        case BIT:break;
+
+        default:
+            if(node->type<100||node->type>266)  break;
+
+            if ((node->left).nodetype)
+            {
+                inttype=search_str((node->left).nodetype->type);
+                fprintf(stream, "   \"%d : %s\" -> \"%d : %s\";\n",index, last_str, ind+1,inttype);
+                bst_print_dot_aux((node->left).nodetype, stream,inttype,++ind);
+
+            }
+
+
+            if ( (node->right).nodetype )
+            {
+
+                inttype=search_str((node->right).nodetype->type);
+
+                fprintf(stream, "   \"%d : %s\" -> \"%d : %s\";\n", index,last_str,ind+1, inttype);
+                bst_print_dot_aux((node->right).nodetype, stream,inttype,++ind);
+//                ind++;
+            }
+
+            break;
+
+    }
+
+
+}
+
+void bst_print_dot(struct node * tree, FILE* stream)
+{
+    int index=0;
+    ind=0;
+    fprintf(stream, "digraph Tree {\n");
+    fprintf(stream, "    node [fontname=\"Arial\"];\n");
+
+    if (!tree)
+        fprintf(stream, "\n");
+    else if (!(tree->left).nodetype && !(tree->right).nodetype && !(tree->left).strtype && !(tree->right).strtype) {
+        fprintf(stream, "%d : Root:%s;\n",index, search_str(tree->type));
+    }
+    else {
+        bst_print_dot_aux(tree, stream,search_str(tree->type),index);
+    }
+
+    fprintf(stream, "}\n");
+}
 /*---------------------------------------------------------------------------*/
 /* Static function prototypes                                                */
 /*---------------------------------------------------------------------------*/
@@ -54,6 +402,7 @@ void GradedMc_checkGradedCtlSpec(Prop_ptr prop) {
 	BddFsm_ptr fsm;
 	BddEnc_ptr enc;
 	DdManager* dd;
+	 FILE *fp;
 	Expr_ptr spec = Prop_get_expr_core(prop);
 
 	if (opt_verbose_level_gt(options, 0)) {
@@ -82,8 +431,19 @@ void GradedMc_checkGradedCtlSpec(Prop_ptr prop) {
 	if (bdd_is_zero(dd, fair))
 		warning_fsm_fairness_empty();
 	
+	  fp = fopen("/mnt/d/WSL/NuSMV-2.4.3/nusmv/spec.dot", "w");
+	              if (fp == NULL)
+	                  printf("fail to open the file! \n");
+	              else {
+	                  printf("The file is open! \n");
+	                  bst_print_dot(spec, fp);
+
+	                  fclose(fp);
+	              }
+
+
 	/* Evaluates the spec */
-	tmp1 = GradedMc_evalGradedCtlSpec(fsm, enc, spec, Nil);
+  	tmp1 = GradedMc_evalGradedCtlSpec(fsm, enc, spec, Nil);
 	tmp2 = bdd_not(dd, tmp1);
 	bdd_free(dd, tmp1);
     

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ca8cf060-9315-4477-bec4-dbe0440ce8ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/include/cudd.h" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/include/cudd.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/include/cuddInt.h" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/include/cuddInt.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/include/cuddObj.hh" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/include/cuddObj.hh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/include/dddmp.h" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/include/dddmp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/include/mnemosyne.h" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/include/mnemosyne.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/include/mtr.h" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/include/mtr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/include/st.h" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/include/st.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/include/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/include/util.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/lib/libcudd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/lib/libcudd.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/lib/libcudd_util.a" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/lib/libcudd_util.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/lib/libmtr.a" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/lib/libmtr.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cudd-2.4.1.0/lib/libst.a" beforeDir="false" afterPath="$PROJECT_DIR$/cudd-2.4.1.0/lib/libst.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/.libs/libnusmv.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/.libs/libnusmv.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/NuSMV" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/NuSMV" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/config.log" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/config.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/examples/example_cmu/test.smv" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/examples/example_cmu/test.smv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/ltl2smv" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/ltl2smv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/.libs/libnusmvcore.a" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/.libs/libnusmvcore.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/.libs/libnusmvcore.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/.libs/libnusmvcore.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/be/.libs/libbe.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/be/.libs/libbe.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/bmc/.libs/libbmc.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/bmc/.libs/libbmc.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/bmc/sbmc/.libs/libsbmc.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/bmc/sbmc/.libs/libsbmc.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/cmd/.libs/libcmd.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/cmd/.libs/libcmd.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/compile/.libs/libcompile.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/compile/.libs/libcompile.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/compile/type_checking/.libs/libcompiletc.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/compile/type_checking/.libs/libcompiletc.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/dag/.libs/libdag.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/dag/.libs/libdag.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/dd/.libs/libdd.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/dd/.libs/libdd.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/enc/.libs/libenc.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/enc/.libs/libenc.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/fsm/.libs/libfsm.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/fsm/.libs/libfsm.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/graded/mc/.libs/libgraded.a" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/graded/mc/.libs/libgraded.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/graded/mc/.libs/libgraded.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/graded/mc/.libs/libgraded.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/graded/mc/Eval.o" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/graded/mc/Eval.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/graded/mc/Explain.o" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/graded/mc/Explain.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/graded/mc/ModelChecking.c" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/graded/mc/ModelChecking.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/graded/mc/ModelChecking.h" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/graded/mc/ModelChecking.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/graded/mc/ModelChecking.o" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/graded/mc/ModelChecking.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/graded/utils/.libs/libgradedutils.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/graded/utils/.libs/libgradedutils.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/ltl/.libs/libltl.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/ltl/.libs/libltl.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/ltl/ltl2smv/.libs/libltl2smv.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/ltl/ltl2smv/.libs/libltl2smv.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/ltl/ltl2smv/ltl2smv" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/ltl/ltl2smv/ltl2smv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/mc/.libs/libmc.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/mc/.libs/libmc.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/mc/Makefile.am" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/mc/Makefile.am" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/node/.libs/libnode.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/node/.libs/libnode.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/node/printers/.libs/libnodeprinters.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/node/printers/.libs/libnodeprinters.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/opt/.libs/libopt.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/opt/.libs/libopt.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/parser/.libs/libparser.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/parser/.libs/libparser.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/parser/idlist/.libs/libparseridlist.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/parser/idlist/.libs/libparseridlist.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/parser/ord/.libs/libparserOrd.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/parser/ord/.libs/libparserOrd.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/parser/psl/.libs/libparserpsl.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/parser/psl/.libs/libparserpsl.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/parser/symbols.h" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/parser/symbols.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/prop/.libs.1/libprop.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/prop/.libs.1/libprop.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/prop/.libs/libprop.a" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/prop/.libs/libprop.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/prop/.libs/libprop.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/prop/.libs/libprop.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/prop/propProp.o" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/prop/propProp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/rbc/.libs/librbc.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/rbc/.libs/librbc.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/sat/.libs/libsat.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/sat/.libs/libsat.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/sat/solvers/.libs/libsatsolvers.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/sat/solvers/.libs/libsatsolvers.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/set/.libs/libset.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/set/.libs/libset.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/sim/.libs/libsim.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/sim/.libs/libsim.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/simulate/.libs/libsimulate.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/simulate/.libs/libsimulate.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/sm/.libs/libsm.a" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/sm/.libs/libsm.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/sm/.libs/libsm.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/sm/.libs/libsm.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/sm/smMisc.o" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/sm/smMisc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/sm/smVers.o" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/sm/smVers.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/trace/.libs/libtrace.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/trace/.libs/libtrace.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/trans/.libs/libtrans.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/trans/.libs/libtrans.la" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nusmv/src/utils/.libs/libutils.la" beforeDir="false" afterPath="$PROJECT_DIR$/nusmv/src/utils/.libs/libutils.la" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nusmv/compile_commands.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2552" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="NuSMV-2.4.3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NuSMV-2.4.3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NuSMV-2.4.3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NuSMV-2.4.3" type="462c0819:PsiDirectoryNode" />
+              <item name="nusmv" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca8cf060-9315-4477-bec4-dbe0440ce8ba" name="Default Changelist" comment="" />
+      <created>1564124975175</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1564124975175</updated>
+      <workItem from="1564124976709" duration="105000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="105000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="2552" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33528784" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Remote Host" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/nusmv/compile_commands.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

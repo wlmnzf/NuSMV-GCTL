@@ -59,6 +59,7 @@ PATH: /mnt/c/Python/Python37
 PATH: /mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit
 PATH: /mnt/c/Program Files (x86)/ZeroTier/One
 PATH: /mnt/c/Program Files/Pandoc
+PATH: /mnt/c/MinGW/bin
 PATH: /mnt/c/Users/William/AppData/Local/Microsoft/WindowsApps
 PATH: /mnt/c/Users/William/AppData/Local/Programs/Microsoft VS Code/bin
 PATH: /mnt/c/Users/William/AppData/Roaming/npm
@@ -166,7 +167,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:4629: result: gcc -E
@@ -186,7 +187,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
 configure:4692: checking for grep that handles long lines and -e
@@ -314,7 +315,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -388,7 +389,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -422,7 +423,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -650,11 +651,11 @@ configure:20335: checking lex output file root
 configure:20349: result: lex.yy
 configure:20354: checking lex library
 configure:20368: gcc -o conftest -g -O2   conftest.c   >&5
-/tmp/ccJOU0DH.o: In function `input':
+/tmp/ccSvcCfJ.o: In function `input':
 /mnt/d/WSL/NuSMV-2.4.3/nusmv/lex.yy.c:1101: undefined reference to `yywrap'
-/tmp/ccJOU0DH.o: In function `yylex':
+/tmp/ccSvcCfJ.o: In function `yylex':
 /mnt/d/WSL/NuSMV-2.4.3/nusmv/lex.yy.c:758: undefined reference to `yywrap'
-/tmp/ccJOU0DH.o: In function `main':
+/tmp/ccSvcCfJ.o: In function `main':
 /mnt/d/WSL/NuSMV-2.4.3/nusmv/conftest.l:17: undefined reference to `yywrap'
 collect2: error: ld returned 1 exit status
 configure:20368: $? = 1
@@ -668,7 +669,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -2316,7 +2317,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -2365,7 +2366,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -2414,7 +2415,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -2464,7 +2465,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -2659,7 +2660,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -2767,7 +2768,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -2895,7 +2896,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -2982,7 +2983,7 @@ configure:22549: $? = 0
 configure:22549: result: yes
 configure:22555: checking for _doprnt
 configure:22555: gcc -o conftest -g -O2   conftest.c -lm  >&5
-/tmp/cccqTLzc.o: In function `main':
+/tmp/cc9r2dFc.o: In function `main':
 /mnt/d/WSL/NuSMV-2.4.3/nusmv/conftest.c:96: undefined reference to `_doprnt'
 collect2: error: ld returned 1 exit status
 configure:22555: $? = 1
@@ -2996,7 +2997,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -3172,7 +3173,7 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | #define PACKAGE "NuSMV"
 | #define VERSION "2.4.3"
-| #define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+| #define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 | #define STDC_HEADERS 1
 | #define HAVE_SYS_TYPES_H 1
 | #define HAVE_SYS_STAT_H 1
@@ -3739,7 +3740,7 @@ zchafflibdir='../zchaff_v2007.3.12'
 #define PACKAGE_URL ""
 #define PACKAGE "NuSMV"
 #define VERSION "2.4.3"
-#define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+#define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 #define STDC_HEADERS 1
 #define HAVE_SYS_TYPES_H 1
 #define HAVE_SYS_STAT_H 1
@@ -3807,6 +3808,44 @@ zchafflibdir='../zchaff_v2007.3.12'
 #define EXEEXT ""
 
 configure: exit 0
+
+## ---------------------- ##
+## Running config.status. ##
+## ---------------------- ##
+
+This file was extended by NuSMV config.status 2.4.3, which was
+generated by GNU Autoconf 2.69.  Invocation command line was
+
+  CONFIG_FILES    = 
+  CONFIG_HEADERS  = 
+  CONFIG_LINKS    = 
+  CONFIG_COMMANDS = 
+  $ ./config.status src/mc/Makefile depfiles
+
+on DESKTOP-U5FFSMR
+
+config.status:1022: creating src/mc/Makefile
+config.status:1125: WARNING:  'src/mc/Makefile.in' seems to ignore the --datarootdir setting
+config.status:1244: executing depfiles commands
+
+## ---------------------- ##
+## Running config.status. ##
+## ---------------------- ##
+
+This file was extended by NuSMV config.status 2.4.3, which was
+generated by GNU Autoconf 2.69.  Invocation command line was
+
+  CONFIG_FILES    = 
+  CONFIG_HEADERS  = 
+  CONFIG_LINKS    = 
+  CONFIG_COMMANDS = 
+  $ ./config.status src/opt/Makefile depfiles
+
+on DESKTOP-U5FFSMR
+
+config.status:1022: creating src/opt/Makefile
+config.status:1125: WARNING:  'src/opt/Makefile.in' seems to ignore the --datarootdir setting
+config.status:1244: executing depfiles commands
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -4533,34 +4572,9 @@ generated by GNU Autoconf 2.69.  Invocation command line was
   CONFIG_HEADERS  = 
   CONFIG_LINKS    = 
   CONFIG_COMMANDS = 
-  $ ./config.status src/mc/Makefile depfiles
+  $ ./config.status src/graded/mc/Makefile depfiles
 
 on DESKTOP-U5FFSMR
 
-config.status:1022: creating src/mc/Makefile
-config.status:1125: WARNING:  'src/mc/Makefile.in' seems to ignore the --datarootdir setting
+config.status:1022: creating src/graded/mc/Makefile
 config.status:1244: executing depfiles commands
-
-## ---------------------- ##
-## Running config.status. ##
-## ---------------------- ##
-
-This file was extended by NuSMV config.status 2.4.3, which was
-generated by GNU Autoconf 2.69.  Invocation command line was
-
-  CONFIG_FILES    = 
-  CONFIG_HEADERS  = 
-  CONFIG_LINKS    = 
-  CONFIG_COMMANDS = 
-  $ ./config.status src/opt/Makefile depfiles
-
-on DESKTOP-U5FFSMR
-
-config.status:1022: creating src/opt/Makefile
-config.status:1125: WARNING:  'src/opt/Makefile.in' seems to ignore the --datarootdir setting
-config.status:1244: executing depfiles commands
-
-## ---------------- ##
-## Cache variables. ##
-## ---------------- ##
-

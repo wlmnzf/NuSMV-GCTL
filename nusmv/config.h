@@ -198,7 +198,7 @@
 #define PACKAGE_BUGREPORT "nusmv@irst.itc.it"
 
 /* Build date */
-#define PACKAGE_BUILD_DATE "Tue Jul 16 10:21:58 UTC 2019"
+#define PACKAGE_BUILD_DATE "Thu Jul 25 08:06:08 UTC 2019"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "NuSMV"

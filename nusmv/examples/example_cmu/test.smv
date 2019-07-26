@@ -13,5 +13,6 @@ next(state):=case
              state=6:1;
 			TRUE : state;
 		esac;
-		
--- GRADEDSPEC "!EF 1 (state=6)"
+
+CTLGRADSPEC !EF 1 (state=6)		
+

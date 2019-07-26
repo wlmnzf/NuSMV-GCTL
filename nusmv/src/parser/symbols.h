@@ -61,7 +61,7 @@ enum {
   JUSTICE,
   COMPASSION,
   SPEC,
-  LTLSPEC,
+  LTLSPEC,//110
   /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
   CTLGSPEC,
   /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -73,7 +73,7 @@ enum {
   GOTO, 
   CONSTRAINT,
   MODULE,
-  PROCESS,
+  PROCESS,//120
   MODTYPE,
   LAMBDA,
   CONSTANTS,  
@@ -90,7 +90,7 @@ enum {
   NUSMV_EXPR_SYMBOL_FIRST, 
 
   FAILURE,
-  CONTEXT,
+  CONTEXT,//130
   EU,
   AU,
   EBU,
@@ -99,7 +99,7 @@ enum {
   MAXU,
   VAR,
   IVAR,
-  BOOLEAN,
+  BOOLEAN,//140
   ARRAY,
   OF,
   SCALAR,
@@ -109,7 +109,7 @@ enum {
   LP,
   RP,
   LB,
-  RB,
+  RB,//150
   LCB,
   RCB,
   EQDEF,
@@ -119,7 +119,7 @@ enum {
   SELF,
   CASE,
   ESAC,
-  COLON,
+  COLON,//160
   IFTHENELSE,
   INCONTEXT,
   SIMPWFF,
@@ -131,17 +131,17 @@ enum {
   COMPWFF,
   ATOM,
   NUMBER,
-  COMMA,
+  COMMA,//170
   IMPLIES,
   IFF,
   OR,
   XOR,
-  XNOR,
+  XNOR,//175
   AND,
   NOT,
   EX,
   AX,
-  EF,
+  EF,//180
   AF,
   EG,
   AG,

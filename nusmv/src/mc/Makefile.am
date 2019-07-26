@@ -45,7 +45,7 @@ PKG_SOURCES = mc.h mcInt.h mcAGonly.c mcCmd.c mcEval.c mcExplain.c \
 	mcInvar.c mcMc.c mcLE.c
 
 mcdir = $(includedir)/nusmv/mc
-mc_HEADERS =  mc.h
+mc_HEADERS =  mc.h 
 
 # -------------------------------------------------------
 

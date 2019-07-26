@@ -44,6 +44,13 @@
 #include "graded/mc/GradedCtl.h"
 #include "graded/utils/GradedUtils.h"
 
+char *myitoa(int num,char *str,int radix);
+char *search_str(int n);
+void bst_print_dot_aux(struct node* node, FILE* stream,char* last_str,int index);
+void bst_print_dot(struct node * tree, FILE* stream);
+
+
+
 /*---------------------------------------------------------------------------*/
 /* Function prototypes                                                       */
 /*---------------------------------------------------------------------------*/
