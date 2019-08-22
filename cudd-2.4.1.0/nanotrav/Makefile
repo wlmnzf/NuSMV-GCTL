@@ -44,7 +44,7 @@ UBJ	= $(SRC:.c=.u)
 
 MFLAG	=
 #MFLAG	= -DMNEMOSYNE
-ICFLAGS = -g -O6 -Wall
+ICFLAGS = -g -O0 -Wall
 #ICFLAGS = -g -Wall
 XCFLAGS = -DHAVE_IEEE_754 -DBSD
 #XCFLAGS = -xtaso -ieee_with_no_inexact -tune host
@@ -74,7 +74,7 @@ optimize_dec: $(TARGETu)
 
 # optimize (DECstations only: uses u-code)
 $(TARGETu): $(SRC) $(UBJ) $(HDR) $(LIBS:.a=.b)
-	cc -O3 $(XCFLAGS) $(LDFLAGS) $(UBJ) -o $@ $(BLIBS) -lm
+	cc -O0 $(XCFLAGS) $(LDFLAGS) $(UBJ) -o $@ $(BLIBS) -lm
 
 .c.u: $(SRC) $(HDR)
 	cc -j -I$(INCLUDE) $(XCFLAGS) $<

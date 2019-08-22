@@ -4,7 +4,7 @@ diff -Naur zchaff/Makefile zchaff_itc/Makefile
 @@ -1,4 +1,5 @@
  CC = g++ -Wall
 +CXX = g++ -Wall
- CFLAGS = -O3
+ CFLAGS = -O0
  
  #MFLAGS = 
 @@ -29,16 +30,16 @@

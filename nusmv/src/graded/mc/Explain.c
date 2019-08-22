@@ -202,6 +202,7 @@ treeNode_ptr GradedMc_euExplainGraded(BddFsm_ptr fsm, BddEnc_ptr enc, int nTrace
        
 	BddStates postImage = BddFsm_get_forward_image(fsm, s);
 	GradedUtils_applyReachableAndMask(fsm, &postImage);
+
        
 	while (count < nTraces + 1 && i < k + 1 )
 	{
@@ -212,6 +213,7 @@ treeNode_ptr GradedMc_euExplainGraded(BddFsm_ptr fsm, BddEnc_ptr enc, int nTrace
 		int array_size = BddEnc_count_states_of_bdd(enc, POST);
 		int contribuzione, resto;
 		
+		//paths is not enough for needed number
 		if ((i+1) * array_size <= nTraces+1-count){
 			contribuzione = i + 1;
 			resto = 0;
@@ -238,26 +240,36 @@ treeNode_ptr GradedMc_euExplainGraded(BddFsm_ptr fsm, BddEnc_ptr enc, int nTrace
 				resto--;
 				
 				if(nPaths>0){
+						
 					TreeUtils_concat(res, GradedMc_euExplainGraded(fsm, enc, nPaths, array[j], input, f, g, intermediateSets, k));
+					//return res;
+					// TreeUtils_concat(res, GradedMc_euExplainGraded(fsm, enc, nTraces, s, input, f, g, intermediateSets, k));
 				}
-				else{
-					node_ptr path = eu_explain(fsm, enc, cons((node_ptr) bdd_dup(array[j]), NODE_PTR(0)), f, g);
+				// else{
+				// 	// if(res->lista!=NULL)
+				// 	//  continue;
+				// 	// node_ptr path = eu_explain(fsm, enc, cons((node_ptr) bdd_dup(s), NODE_PTR(0)), f, g);
+				// 	node_ptr path = eu_explain(fsm, enc, cons((node_ptr) bdd_dup(array[j]), NODE_PTR(0)), f, g);
 
-					treeNode_ptr sottoAlbero = (treeNode_ptr) GradedUtils_node_ptrToTreeNode_ptr(fsm, enc, path, input);
+				// 	treeNode_ptr sottoAlbero = (treeNode_ptr) GradedUtils_node_ptrToTreeNode_ptr(fsm, enc, path, input);
 					
-					/*walk_dd(dd,bdd_free, path);
-					free_list(path);*/
-					
-					if (s!= array[j] || sottoAlbero == NIL(treeNode))
-					  TreeUtils_concat(res, sottoAlbero);
-					else{
-					  adjList_ptr l1 = TreeUtils_getListaFigli(sottoAlbero);
-					  if (l1 != NIL(adjList)){
-					    treeNode_ptr m1 = TreeUtils_getNodo(l1);
-					    TreeUtils_concat(res, m1);
-					  }
-					}
-				}
+				// 	/*walk_dd(dd,bdd_free, path);
+				// 	free_list(path);*/
+				// 	 //res = TreeUtils_treeNodeCreate(s, sInput);
+
+				// 	if (s!= array[j] || sottoAlbero == NIL(treeNode))
+				// 	   //res=sottoAlbero;
+				// 	//    res=res;
+				// 	   TreeUtils_concat(res, sottoAlbero);
+				// 	else{
+				// 	  adjList_ptr l1 = TreeUtils_getListaFigli(sottoAlbero);
+				// 	  if (l1 != NIL(adjList)){
+				// 	    treeNode_ptr m1 = TreeUtils_getNodo(l1);
+				// 	    TreeUtils_concat(res, m1);
+				// 	  }
+				// 	}
+				// 	// return tmp;
+				// }
 			}
 		}
 		i++;

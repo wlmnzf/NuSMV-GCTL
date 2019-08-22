@@ -101,7 +101,7 @@ $(TARGET): $(SRC) $(OBJ) $(HDR) $(LIBS) $(MNEMLIB)
 
 # optimize (DECstations and Alphas only: uses u-code)
 $(TARGETu): $(SRC) $(UBJ) $(HDR) $(LIBS:.a=.b)
-	$(CC) -O3 -Olimit 1000 $(XCFLAGS) $(LDFLAGS) -o $@ $(UBJ) $(BLIBS) -lm
+	$(CC) -O0 -Olimit 1000 $(XCFLAGS) $(LDFLAGS) -o $@ $(UBJ) $(BLIBS) -lm
 
 lint: llib-l$(P).ln
 

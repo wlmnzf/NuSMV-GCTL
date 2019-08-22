@@ -54,10 +54,10 @@ RANLIB	= ranlib
 #ICFLAGS	=
 # These four are typical settings for optimized code with gcc.  The
 # last two also work with icc/ecc.
-#ICFLAGS	= -g -O6 -Wall
-ICFLAGS	= -g -O6
-#ICFLAGS	= -g -O3 -Wall
-#ICFLAGS	= -g -O3
+#ICFLAGS	= -g -O0 -Wall
+ICFLAGS	= -g -O0
+#ICFLAGS	= -g -O0 -Wall
+#ICFLAGS	= -g -O0
 
 # Use XCFLAGS to specify machine-dependent compilation flags.
 # For some platforms no special flags are needed.
@@ -122,9 +122,9 @@ ICFLAGS	= -g -O6
 # Old native compiler for the Alphas; 32-bit pointers.
 #XCFLAGS	= -DBSD -DHAVE_IEEE_754 -ieee_with_no_inexact -tune host -xtaso -DSIZEOF_LONG=8
 # New native compiler for the Alphas; 64-bit pointers. 
-#XCFLAGS	= -g3 -O4 -std -DBSD -DHAVE_IEEE_754 -ieee_with_no_inexact -tune host -DSIZEOF_VOID_P=8 -DSIZEOF_LONG=8
+#XCFLAGS	= -g3 -O0 -std -DBSD -DHAVE_IEEE_754 -ieee_with_no_inexact -tune host -DSIZEOF_VOID_P=8 -DSIZEOF_LONG=8
 # New native compiler for the Alphas; 32-bit pointers.
-#XCFLAGS	= -g3 -O4 -std -DBSD -DHAVE_IEEE_754 -ieee_with_no_inexact -tune host -xtaso -DSIZEOF_LONG=8
+#XCFLAGS	= -g3 -O0 -std -DBSD -DHAVE_IEEE_754 -ieee_with_no_inexact -tune host -xtaso -DSIZEOF_LONG=8
 # gcc for the Alphas: compile without HAVE_IEEE_754.
 #XCFLAGS	= -DBSD -DSIZEOF_VOID_P=8 -DSIZEOF_LONG=8
 #
@@ -132,8 +132,8 @@ ICFLAGS	= -g -O6
 #
 #  IBM RS6000
 #
-# For the IBM RS6000 -qstrict is necessary when specifying -O3 with cc.
-#XCFLAGS	= -DBSD -DHAVE_IEEE_754 -DEPD_BIG_ENDIAN -O3 -qstrict
+# For the IBM RS6000 -qstrict is necessary when specifying -O0 with cc.
+#XCFLAGS	= -DBSD -DHAVE_IEEE_754 -DEPD_BIG_ENDIAN -O0 -qstrict
 #
 #==========================
 #

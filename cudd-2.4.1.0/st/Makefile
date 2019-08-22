@@ -8,7 +8,7 @@ CC	= gcc
 RANLIB	= ranlib
 
 MFLAG	=
-ICFLAGS = -g -O6 -Wall
+ICFLAGS = -g -O0 -Wall
 CFLAGS  = $(ICFLAGS) $(MFLAG) $(XCFLAGS)
 
 LINTFLAGS = -u -n

@@ -431,15 +431,15 @@ void GradedMc_checkGradedCtlSpec(Prop_ptr prop) {
 	if (bdd_is_zero(dd, fair))
 		warning_fsm_fairness_empty();
 	
-	  fp = fopen("/mnt/d/WSL/NuSMV-2.4.3/nusmv/spec.dot", "w");
-	              if (fp == NULL)
-	                  printf("fail to open the file! \n");
-	              else {
-	                  printf("The file is open! \n");
-	                  bst_print_dot(spec, fp);
+	//   fp = fopen("/mnt/d/WSL/NuSMV-2.4.3/nusmv/spec.dot", "w");
+	//               if (fp == NULL)
+	//                   printf("fail to open the file! \n");
+	//               else {
+	//                   printf("The file is open! \n");
+	//                   bst_print_dot(spec, fp);
 
-	                  fclose(fp);
-	              }
+	//                   fclose(fp);
+	//               }
 
 
 	/* Evaluates the spec */

@@ -3,11 +3,11 @@ diff -Naur zchaff64_ORIG/Makefile zchaff64/Makefile
 +++ zchaff64/Makefile	2007-03-16 14:46:24.000000000 +0100
 @@ -1,5 +1,6 @@
  CC = g++ -Wall
--CFLAGS = -O3 
+-CFLAGS = -O0 
 +CXX = g++ -Wall
-+CFLAGS = -O3
++CFLAGS = -O0
  
- #CFLAGS = -O3 -DNDEBUG
+ #CFLAGS = -O0 -DNDEBUG
  #MFLAGS = 
 @@ -18,7 +19,6 @@
  

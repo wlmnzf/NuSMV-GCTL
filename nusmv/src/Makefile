@@ -93,9 +93,10 @@ LTLIBRARIES = $(lib_LTLIBRARIES)
 #am__DEPENDENCIES_1 = mbp/libmbp.la
 #am__DEPENDENCIES_2 = sa/libsa.la
 #am__DEPENDENCIES_3 = mathsat/libmathsat.la
-libnusmvcore_la_DEPENDENCIES = parser/libparser.la utils/libutils.la \
-	graded/mc/libgraded.la         \
-	graded/utils/libgradedutils.la         \
+libnusmvcore_la_DEPENDENCIES =\
+graded/mc/libgraded.la\
+graded/utils/libgradedutils.la\
+    parser/libparser.la utils/libutils.la \
 	dag/libdag.la set/libset.la node/libnode.la rbc/librbc.la \
 	enc/libenc.la dd/libdd.la fsm/libfsm.la trans/libtrans.la \
 	trace/libtrace.la mc/libmc.la ltl/libltl.la sat/libsat.la \
@@ -126,24 +127,24 @@ ETAGS = etags
 CTAGS = ctags
 DIST_SUBDIRS = $(SUBDIRS)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /mnt/d/WSL/NuSMV-2.4.3/nusmv/helpers/missing --run aclocal-1.9
+ACLOCAL = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run aclocal-1.9
 AMDEP_FALSE = #
 AMDEP_TRUE = 
-AMTAR = ${SHELL} /mnt/d/WSL/NuSMV-2.4.3/nusmv/helpers/missing --run tar
+AMTAR = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run tar
 AR = ar
-AUTOCONF = ${SHELL} /mnt/d/WSL/NuSMV-2.4.3/nusmv/helpers/missing --run autoconf
-AUTOHEADER = ${SHELL} /mnt/d/WSL/NuSMV-2.4.3/nusmv/helpers/missing --run autoheader
-AUTOMAKE = ${SHELL} /mnt/d/WSL/NuSMV-2.4.3/nusmv/helpers/missing --run automake-1.9
-AWK = gawk
+AUTOCONF = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run automake-1.9
+AWK = mawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2
+CFLAGS = -g -O0
 CPP = gcc -E
 CPPFLAGS = 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+CXXFLAGS = -g -O0 -Wl,--no-as-needed
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -198,7 +199,7 @@ LIBS = -lm
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /mnt/d/WSL/NuSMV-2.4.3/nusmv/helpers/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run makeinfo
 OBJEXT = o
 PACKAGE = NuSMV
 PACKAGE_BUGREPORT = nusmv@irst.itc.it
@@ -248,7 +249,7 @@ host_os = linux-gnu
 host_vendor = unknown
 includedir = ${prefix}/include
 infodir = ${prefix}/share/info
-install_sh = /mnt/d/WSL/NuSMV-2.4.3/nusmv/helpers/install-sh
+install_sh = /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localstatedir = ${prefix}/var
@@ -265,7 +266,7 @@ mkdir_p = mkdir -p --
 oldincludedir = /usr/include
 prefix = /usr/local
 program_transform_name = s,x,x,
-readline_libs = 
+readline_libs = -lreadline -ltermcap
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 sysconfdir = ${prefix}/etc
@@ -291,8 +292,8 @@ SUBDIRS = parser be cmd dag enc ltl mc opt prop sat set \
 lib_LTLIBRARIES = libnusmvcore.la	
 libnusmvcore_la_SOURCES = 
 libnusmvcore_la_LIBADD = \
-	graded/mc/libgraded.la         \
-	graded/utils/libgradedutils.la         \
+graded/mc/libgraded.la\
+graded/utils/libgradedutils.la\
 	parser/libparser.la \
 	utils/libutils.la   \
 	dag/libdag.la       \

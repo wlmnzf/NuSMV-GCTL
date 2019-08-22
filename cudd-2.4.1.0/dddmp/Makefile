@@ -66,8 +66,8 @@ RANLIB	= ranlib
 #ICFLAGS        = -O
 # Settings for optimized code with gcc
 #ICFLAGS	= -g -Wall
-#ICFLAGS	= -g -O3 -Wall
-ICFLAGS	= -g -O6 -Wall
+#ICFLAGS	= -g -O0 -Wall
+ICFLAGS	= -g -O0 -Wall
       
 #--------------------------------#
 # Define Machine Dependent Flags #
@@ -82,9 +82,9 @@ XCFLAGS	= -mcpu=pentiumpro -malign-double -DHAVE_IEEE_754 -DBSD
 # For Solaris, BSD should not be replaced by UNIX100.
 #XCFLAGS	= -DHAVE_IEEE_754 -DUNIX100 -DEPD_BIG_ENDIAN
 # New native compiler for the Alphas; 64-bit pointers. 
-#XCFLAGS	= -g3 -O4 -std -DBSD -DHAVE_IEEE_754 -ieee_with_no_inexact -tune host -DSIZEOF_VOID_P=8 -DSIZEOF_LONG=8
+#XCFLAGS	= -g3 -O0 -std -DBSD -DHAVE_IEEE_754 -ieee_with_no_inexact -tune host -DSIZEOF_VOID_P=8 -DSIZEOF_LONG=8
 # New native compiler for the Alphas; 32-bit pointers.
-#XCFLAGS	= -g3 -O4 -std -DBSD -DHAVE_IEEE_754 -ieee_with_no_inexact -tune host -xtaso -DSIZEOF_LONG=8
+#XCFLAGS	= -g3 -O0 -std -DBSD -DHAVE_IEEE_754 -ieee_with_no_inexact -tune host -xtaso -DSIZEOF_LONG=8
 #  Windows95/98/NT/XP with Cygwin tools
 #XCFLAGS	= -mcpu=pentiumpro -malign-double -DHAVE_IEEE_754 -DHAVE_GETRLIMIT=0 -DRLIMIT_DATA_DEFAULT=67108864
 
@@ -209,7 +209,7 @@ $(TARGET): $(SRC) $(OBJ) $(PHDR) $(LIBS) $(MNEMLIB)
 
 # optimize (DECstations and Alphas only: uses u-code)
 $(TARGETu): $(SRC) $(UBJ) $(PHDR) $(LIBS:.a=.b)
-	cc -O3 -Olimit 1000 $(XCFLAGS) $(LDFLAGS) -o $@ $(UBJ) $(BLIBS) -lm
+	cc -O0 -Olimit 1000 $(XCFLAGS) $(LDFLAGS) -o $@ $(UBJ) $(BLIBS) -lm
 
 lint: llib-l$(P).ln
 

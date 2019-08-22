@@ -11,13 +11,10 @@ be/BeFsm.lo: be/BeFsm.c /usr/include/stdc-predef.h be/BeFsm.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
- /usr/include/x86_64-linux-gnu/bits/unistd.h /usr/include/stdio.h \
- /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
+ /usr/include/stdio.h /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/wchar.h /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/ctype.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/ctype.h \
  /usr/include/endian.h /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap-16.h /usr/include/xlocale.h \
@@ -28,29 +25,24 @@ be/BeFsm.lo: be/BeFsm.c /usr/include/stdc-predef.h be/BeFsm.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/sigset.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/string.h \
- /usr/include/x86_64-linux-gnu/bits/string.h \
- /usr/include/x86_64-linux-gnu/bits/string2.h \
- /usr/include/x86_64-linux-gnu/bits/string3.h /usr/include/assert.h \
- ../utils/defs.h /usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h \
- ../utils/list.h ../node/node.h ../fsm/sexp/Expr.h \
- ../compile/FlatHierarchy.h ../compile/symb_table/SymbLayer.h \
- ../compile/symb_table/SymbType.h ../utils/NodeList.h ../utils/utils.h \
- ../compile/PredicateNormaliser.h ../compile/type_checking/TypeChecker.h \
- ../node/MasterNodeWalker.h ../node/NodeWalker.h ../utils/object.h \
- /usr/include/memory.h ../compile/symb_table/SymbType.h \
- ../compile/symb_table/SymbTable.h ../compile/symb_table/SymbLayer.h \
- ../compile/symb_table/SymbCache.h ../utils/array.h ../enc/bdd/BddEnc.h \
- ../enc/bdd/bdd.h ../dd/dd.h ../utils/avl.h \
- ../../../cudd-2.4.1.0/include/cudd.h ../../../cudd-2.4.1.0/include/mtr.h \
- ../enc/base/BoolEncClient.h ../enc/bool/BoolEnc.h ../enc/base/BaseEnc.h \
- ../enc/utils/OrdGroups.h ../fsm/bdd/bdd.h ../enc/utils/AddArray.h \
- ../utils/WordNumber.h ../enc/be/BeEnc.h ../be/be.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/assert.h ../utils/defs.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h ../utils/list.h \
+ ../node/node.h ../fsm/sexp/Expr.h ../compile/FlatHierarchy.h \
+ ../compile/symb_table/SymbLayer.h ../compile/symb_table/SymbType.h \
+ ../utils/NodeList.h ../utils/utils.h ../compile/PredicateNormaliser.h \
+ ../compile/type_checking/TypeChecker.h ../node/MasterNodeWalker.h \
+ ../node/NodeWalker.h ../utils/object.h /usr/include/memory.h \
+ ../compile/symb_table/SymbType.h ../compile/symb_table/SymbTable.h \
+ ../compile/symb_table/SymbLayer.h ../compile/symb_table/SymbCache.h \
+ ../utils/array.h ../enc/bdd/BddEnc.h ../enc/bdd/bdd.h ../dd/dd.h \
+ ../utils/avl.h ../../../cudd-2.4.1.0/include/cudd.h \
+ ../../../cudd-2.4.1.0/include/mtr.h ../enc/base/BoolEncClient.h \
+ ../enc/bool/BoolEnc.h ../enc/base/BaseEnc.h ../enc/utils/OrdGroups.h \
+ ../fsm/bdd/bdd.h ../enc/utils/AddArray.h ../utils/WordNumber.h \
+ ../enc/be/BeEnc.h ../be/be.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -64,8 +56,7 @@ be/BeFsm.lo: be/BeFsm.c /usr/include/stdc-predef.h be/BeFsm.h \
  ../trans/bdd/ClusterList.h ../trans/bdd/Cluster.h \
  ../trans/bdd/ClusterOptions.h ../trans/bdd/ClusterList.h \
  ../fsm/be/BeFsm.h ../utils/ustring.h ../set/set.h /usr/include/setjmp.h \
- /usr/include/x86_64-linux-gnu/bits/setjmp.h \
- /usr/include/x86_64-linux-gnu/bits/setjmp2.h
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h
 
 /usr/include/stdc-predef.h:
 
@@ -107,8 +98,6 @@ be/BeFsm.h:
 
 /usr/include/getopt.h:
 
-/usr/include/x86_64-linux-gnu/bits/unistd.h:
-
 /usr/include/stdio.h:
 
 /usr/include/libio.h:
@@ -122,10 +111,6 @@ be/BeFsm.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
 /usr/include/ctype.h:
 
@@ -157,27 +142,15 @@ be/BeFsm.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/include/x86_64-linux-gnu/bits/select2.h:
-
 /usr/include/x86_64-linux-gnu/sys/sysmacros.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/alloca.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib.h:
-
 /usr/include/string.h:
-
-/usr/include/x86_64-linux-gnu/bits/string.h:
-
-/usr/include/x86_64-linux-gnu/bits/string2.h:
-
-/usr/include/x86_64-linux-gnu/bits/string3.h:
 
 /usr/include/assert.h:
 
@@ -310,5 +283,3 @@ be/BeFsm.h:
 /usr/include/setjmp.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp2.h:

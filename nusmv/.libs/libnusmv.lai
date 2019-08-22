@@ -14,7 +14,7 @@ library_names=''
 old_library='libnusmv.a'
 
 # Libraries that this one depends upon.
-dependency_libs=' /usr/local/lib/libnusmvcore.la -L/mnt/d/WSL/NuSMV-2.4.3/cudd-2.4.1.0/lib -lcudd -lcudd_util -lmtr -lst -L/usr/lib -lexpat -lm'
+dependency_libs=' /usr/local/lib/libnusmvcore.la -L/home/wanglimin/NuSMV-2.4.3/cudd-2.4.1.0/lib -lcudd -lcudd_util -lmtr -lst -lreadline -ltermcap -L/usr/lib -lexpat -lm'
 
 # Version information for libnusmv.
 current=0

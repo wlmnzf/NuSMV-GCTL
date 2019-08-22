@@ -17,36 +17,28 @@ parserUtil.lo: parserUtil.c /usr/include/stdc-predef.h parserInt.h \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/sigset.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/stdio.h \
  /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/stdio2.h parser.h ../utils/utils.h \
- ../../config.h ../../../cudd-2.4.1.0/include/util.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h parser.h \
+ ../utils/utils.h ../../config.h ../../../cudd-2.4.1.0/include/util.h \
  /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
- /usr/include/x86_64-linux-gnu/bits/unistd.h /usr/include/ctype.h \
- /usr/include/xlocale.h /usr/include/string.h \
- /usr/include/x86_64-linux-gnu/bits/string.h \
- /usr/include/x86_64-linux-gnu/bits/string2.h \
- /usr/include/x86_64-linux-gnu/bits/string3.h /usr/include/assert.h \
- ../utils/defs.h /usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h \
- ../utils/list.h ../node/node.h ../dd/dd.h ../utils/array.h \
- ../utils/avl.h ../../../cudd-2.4.1.0/include/cudd.h \
- ../../../cudd-2.4.1.0/include/mtr.h ../set/set.h ../rbc/rbc.h \
- /usr/include/malloc.h ../dag/dag.h ../../../cudd-2.4.1.0/include/st.h \
- ../compile/compile.h ../compile/FlatHierarchy.h \
- ../compile/PredicateNormaliser.h ../compile/type_checking/TypeChecker.h \
- ../node/MasterNodeWalker.h ../node/NodeWalker.h ../utils/object.h \
- /usr/include/memory.h ../utils/utils.h ../compile/symb_table/SymbType.h \
+ /usr/include/ctype.h /usr/include/xlocale.h /usr/include/string.h \
+ /usr/include/assert.h ../utils/defs.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdbool.h ../utils/list.h \
+ ../node/node.h ../dd/dd.h ../utils/array.h ../utils/avl.h \
+ ../../../cudd-2.4.1.0/include/cudd.h ../../../cudd-2.4.1.0/include/mtr.h \
+ ../set/set.h ../rbc/rbc.h /usr/include/malloc.h ../dag/dag.h \
+ ../../../cudd-2.4.1.0/include/st.h ../compile/compile.h \
+ ../compile/FlatHierarchy.h ../compile/PredicateNormaliser.h \
+ ../compile/type_checking/TypeChecker.h ../node/MasterNodeWalker.h \
+ ../node/NodeWalker.h ../utils/object.h /usr/include/memory.h \
+ ../utils/utils.h ../compile/symb_table/SymbType.h \
  ../compile/symb_table/SymbTable.h ../compile/symb_table/SymbLayer.h \
  ../compile/symb_table/SymbType.h ../utils/NodeList.h \
  ../compile/symb_table/SymbCache.h ../compile/symb_table/SymbTable.h \
@@ -69,8 +61,7 @@ parserUtil.lo: parserUtil.c /usr/include/stdc-predef.h parserInt.h \
  ../be/be.h ../opt/opt.h ../sat/sat.h ../sat/SatSolver.h \
  ../sat/SatIncSolver.h ../enc/enc.h ../enc/be/BeEnc.h ../cmd/cmd.h \
  /usr/include/setjmp.h /usr/include/x86_64-linux-gnu/bits/setjmp.h \
- /usr/include/x86_64-linux-gnu/bits/setjmp2.h /usr/include/signal.h \
- /usr/include/x86_64-linux-gnu/bits/signum.h \
+ /usr/include/signal.h /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
  /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
@@ -125,19 +116,13 @@ parserInt.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/include/x86_64-linux-gnu/bits/select2.h:
-
 /usr/include/x86_64-linux-gnu/sys/sysmacros.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/alloca.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
 /usr/include/stdio.h:
 
@@ -152,10 +137,6 @@ parserInt.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
 parser.h:
 
@@ -175,19 +156,11 @@ parser.h:
 
 /usr/include/getopt.h:
 
-/usr/include/x86_64-linux-gnu/bits/unistd.h:
-
 /usr/include/ctype.h:
 
 /usr/include/xlocale.h:
 
 /usr/include/string.h:
-
-/usr/include/x86_64-linux-gnu/bits/string.h:
-
-/usr/include/x86_64-linux-gnu/bits/string2.h:
-
-/usr/include/x86_64-linux-gnu/bits/string3.h:
 
 /usr/include/assert.h:
 
@@ -342,8 +315,6 @@ parser.h:
 /usr/include/setjmp.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp2.h:
 
 /usr/include/signal.h:
 

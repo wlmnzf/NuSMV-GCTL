@@ -559,7 +559,7 @@ s,@cuddname@,cudd-2.4.1.0,;t t
 s,@HAVE_PSL_PARSER_TRUE@,#,;t t
 s,@HAVE_PSL_PARSER_FALSE@,,;t t
 s,@CC@,gcc,;t t
-s,@CFLAGS@,-g -O2,;t t
+s,@CFLAGS@,-g -O0,;t t
 s,@LDFLAGS@,,;t t
 s,@CPPFLAGS@,,;t t
 s,@ac_ct_CC@,gcc,;t t
@@ -604,7 +604,7 @@ s,@minisat_ifcname@,Solver_C.h,;t t
 s,@minisatlibdir@,../MiniSat_v061208,;t t
 s,@minisatincdir@,../MiniSat_v061208,;t t
 s,@CXX@,g++,;t t
-s,@CXXFLAGS@,-g -O2,;t t
+s,@CXXFLAGS@,-g -O0,;t t
 s,@ac_ct_CXX@,g++,;t t
 s,@CXXDEPMODE@,depmode=gcc3,;t t
 s,@am__fastdepCXX_TRUE@,,;t t

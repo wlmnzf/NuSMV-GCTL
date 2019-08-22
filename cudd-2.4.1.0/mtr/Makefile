@@ -86,7 +86,7 @@ $(TARGET): $(POBJ) $(OBJ) $(LIBS) $(MNEMLIB)
 	$(PURE) $(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJ) $(LIBS) $(MNEMLIB) -lm
 
 $(TARGETu): $(SRC) $(PSRC) $(PHDR) $(UBJ) $(PUBJ) $(LIBS:.a=.b)
-	cc -O3 $(XCFLAGS) $(LDFLAGS) -o $@ $(UBJ) $(BLIBS) -lm
+	cc -O0 $(XCFLAGS) $(LDFLAGS) -o $@ $(UBJ) $(BLIBS) -lm
 
 clean:
 	rm -f *.o *.u mon.out gmon.out *.pixie *.Addrs *.Counts mnem.* \
