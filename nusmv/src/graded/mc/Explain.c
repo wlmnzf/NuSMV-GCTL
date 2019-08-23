@@ -230,6 +230,8 @@ treeNode_ptr GradedMc_euExplainGraded(BddFsm_ptr fsm, BddEnc_ptr enc, int nTrace
 			bdd_ptr* array = ALLOC(bdd_ptr, array_size);
 			BddEnc_pick_all_terms_states(enc, POST, array, array_size);
 			
+			//当第二个循环时，有2条路径，正好凑够了3条，所以开始返回，
+			//返回在第一圈是时候正好再补上一条
 			for (j=0; j < array_size; ++j) {
 				if (contribuzione == 0 && resto <= 0)
 					break;
@@ -239,40 +241,45 @@ treeNode_ptr GradedMc_euExplainGraded(BddFsm_ptr fsm, BddEnc_ptr enc, int nTrace
 				int nPaths = contribuzione + (resto>0) - 1;
 				resto--;
 				
+				//问题出在这，第一圈j=0时分岔路时，第一条被用于连接再来一圈，第二圈刚好找到了2个路径，正好满足了3条路经的规则
+				//不断返回的时候，j=1了，然后刚好把第二条拿出来分给EU
 				if(nPaths>0){
 						
 					TreeUtils_concat(res, GradedMc_euExplainGraded(fsm, enc, nPaths, array[j], input, f, g, intermediateSets, k));
 					//return res;
 					// TreeUtils_concat(res, GradedMc_euExplainGraded(fsm, enc, nTraces, s, input, f, g, intermediateSets, k));
 				}
-				// else{
-				// 	// if(res->lista!=NULL)
-				// 	//  continue;
-				// 	// node_ptr path = eu_explain(fsm, enc, cons((node_ptr) bdd_dup(s), NODE_PTR(0)), f, g);
-				// 	node_ptr path = eu_explain(fsm, enc, cons((node_ptr) bdd_dup(array[j]), NODE_PTR(0)), f, g);
+				else{
+					// if(res->lista!=NULL)
+					//  continue;
+					// node_ptr path = eu_explain(fsm, enc, cons((node_ptr) bdd_dup(s), NODE_PTR(0)), f, g);
+					node_ptr path = eu_explain(fsm, enc, cons((node_ptr) bdd_dup(array[j]), NODE_PTR(0)), f, g);
 
-				// 	treeNode_ptr sottoAlbero = (treeNode_ptr) GradedUtils_node_ptrToTreeNode_ptr(fsm, enc, path, input);
+					treeNode_ptr sottoAlbero = (treeNode_ptr) GradedUtils_node_ptrToTreeNode_ptr(fsm, enc, path, input);
 					
-				// 	/*walk_dd(dd,bdd_free, path);
-				// 	free_list(path);*/
-				// 	 //res = TreeUtils_treeNodeCreate(s, sInput);
+					/*walk_dd(dd,bdd_free, path);
+					free_list(path);*/
+					 //res = TreeUtils_treeNodeCreate(s, sInput);
 
-				// 	if (s!= array[j] || sottoAlbero == NIL(treeNode))
-				// 	   //res=sottoAlbero;
-				// 	//    res=res;
-				// 	   TreeUtils_concat(res, sottoAlbero);
-				// 	else{
-				// 	  adjList_ptr l1 = TreeUtils_getListaFigli(sottoAlbero);
-				// 	  if (l1 != NIL(adjList)){
-				// 	    treeNode_ptr m1 = TreeUtils_getNodo(l1);
-				// 	    TreeUtils_concat(res, m1);
-				// 	  }
-				// 	}
-				// 	// return tmp;
-				// }
+					if (s!= array[j] || sottoAlbero == NIL(treeNode))
+					   //res=sottoAlbero;
+					//    res=res;
+					   TreeUtils_concat(res, sottoAlbero);
+					else{
+					  adjList_ptr l1 = TreeUtils_getListaFigli(sottoAlbero);
+					  if (l1 != NIL(adjList)){
+					    treeNode_ptr m1 = TreeUtils_getNodo(l1);
+					    TreeUtils_concat(res, m1);
+					  }
+					}
+					// return tmp;
+				}
+
+
+
 			}
 		}
-		i++;
+ 		i++;
 		bdd_free(dd, POST);
 	}
        

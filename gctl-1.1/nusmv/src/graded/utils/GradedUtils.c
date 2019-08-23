@@ -382,11 +382,13 @@ BddStates * GradedUtils_euGetIntermediateSets(BddFsm_ptr fsm, BddStates f, BddSt
 		GradedUtils_fixPoint(fsm, &contributors, f);
 		
 		lista[i-1] = GradedUtils_bddMinus(dd, old_contributors, contributors);
+		//lista[k-i+1] = GradedUtils_bddMinus(dd, old_contributors, contributors);
 		
 		bdd_free(dd, old_contributors);
 	}
 	//if(k>0)
-		lista[i-1] = contributors;
+	    lista[i-1] = contributors;
+		//lista[0] = contributors;
 	/*else
 		lista[0] = contributors;*/
 	bdd_free(dd, contributors);

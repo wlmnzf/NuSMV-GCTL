@@ -447,7 +447,7 @@ void GradedMc_checkGradedCtlSpec(Prop_ptr prop) {
 	tmp2 = bdd_not(dd, tmp1);
 	bdd_free(dd, tmp1);
     
-    	bdd_and_accumulate(dd, &tmp2, constraints);
+    bdd_and_accumulate(dd, &tmp2, constraints);
 	bdd_and_accumulate(dd, &tmp2, fair);
 	bdd_and_accumulate(dd, &tmp2, initial);
 	
