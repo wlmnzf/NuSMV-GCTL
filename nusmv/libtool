@@ -44,7 +44,7 @@ available_tags=" CXX"
 
 # ### BEGIN LIBTOOL CONFIG
 
-# Libtool was configured on host intel9:
+# Libtool was configured on host william-virtual-machine:
 
 # Shell to use when invoking shell scripts.
 SHELL="/bin/bash"
@@ -7218,7 +7218,7 @@ disable_libs=static
 # End:
 # ### BEGIN LIBTOOL TAG CONFIG: CXX
 
-# Libtool was configured on host intel9:
+# Libtool was configured on host william-virtual-machine:
 
 # Shell to use when invoking shell scripts.
 SHELL="/bin/bash"

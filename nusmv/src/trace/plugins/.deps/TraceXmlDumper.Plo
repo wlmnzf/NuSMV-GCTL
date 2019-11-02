@@ -60,8 +60,7 @@ plugins/TraceXmlDumper.lo: plugins/TraceXmlDumper.c \
  ../be/be.h ../utils/ustring.h ../set/set.h /usr/include/setjmp.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h ../utils/utils_io.h \
  plugins/TraceXml_private.h plugins/TracePlugin_private.h \
- ../utils/object_private.h ../utils/object.h /usr/include/expat.h \
- /usr/include/expat_external.h
+ ../utils/object_private.h ../utils/object.h
 
 /usr/include/stdc-predef.h:
 
@@ -300,7 +299,3 @@ plugins/TracePlugin_private.h:
 ../utils/object_private.h:
 
 ../utils/object.h:
-
-/usr/include/expat.h:
-
-/usr/include/expat_external.h:

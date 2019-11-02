@@ -36,13 +36,13 @@
 #define HAVE_INTTYPES_H 1
 
 /* Disables expat usage */
-#define HAVE_LIBEXPAT 1
+/* #undef HAVE_LIBEXPAT */
 
 /* Define to 1 if you have the `m' library (-lm). */
 #define HAVE_LIBM 1
 
 /* Uses the private readline */
-#define HAVE_LIBREADLINE 1
+#define HAVE_LIBREADLINE 0
 
 /* Define to 1 if you have the <limits.h> header file. */
 #define HAVE_LIMITS_H 1
@@ -198,7 +198,7 @@
 #define PACKAGE_BUGREPORT "nusmv@irst.itc.it"
 
 /* Build date */
-#define PACKAGE_BUILD_DATE "Mon Aug 19 02:33:29 UTC 2019"
+#define PACKAGE_BUILD_DATE "Sat Nov  2 02:04:02 UTC 2019"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "NuSMV"

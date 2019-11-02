@@ -96,15 +96,15 @@ am__libtrace_la_SOURCES_DIST = pkg_trace.h pkg_traceInt.h TraceNode.h \
 	plugins/TraceTable.c plugins/TraceXmlDumper.c \
 	plugins/TraceXmlLoader.c
 am__dirstamp = $(am__leading_dot)dirstamp
-#am__objects_1 = plugins/TraceExplainer.lo \
-#	plugins/TracePlugin.lo \
-#	plugins/TraceTable.lo \
-#	plugins/TraceXmlDumper.lo
 am__objects_1 = plugins/TraceExplainer.lo \
 	plugins/TracePlugin.lo \
 	plugins/TraceTable.lo \
-	plugins/TraceXmlDumper.lo \
-	plugins/TraceXmlLoader.lo
+	plugins/TraceXmlDumper.lo
+#am__objects_1 = plugins/TraceExplainer.lo \
+#	plugins/TracePlugin.lo \
+#	plugins/TraceTable.lo \
+#	plugins/TraceXmlDumper.lo \
+#	plugins/TraceXmlLoader.lo
 am__objects_2 = pkg_trace.lo TraceNode.lo Trace.lo TraceManager.lo \
 	traceCmd.lo TraceLabel.lo $(am__objects_1)
 am_libtrace_la_OBJECTS = $(am__objects_2)
@@ -134,14 +134,14 @@ HEADERS = $(nobase_trace_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run aclocal-1.9
+ACLOCAL = ${SHELL} /home/william/NuSMV-2.4.3/nusmv/helpers/missing --run aclocal-1.9
 AMDEP_FALSE = #
 AMDEP_TRUE = 
-AMTAR = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run tar
+AMTAR = ${SHELL} /home/william/NuSMV-2.4.3/nusmv/helpers/missing --run tar
 AR = ar
-AUTOCONF = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run automake-1.9
+AUTOCONF = ${SHELL} /home/william/NuSMV-2.4.3/nusmv/helpers/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/william/NuSMV-2.4.3/nusmv/helpers/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/william/NuSMV-2.4.3/nusmv/helpers/missing --run automake-1.9
 AWK = mawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -167,8 +167,8 @@ FFLAGS =
 HAVE_LATEX_FALSE = 
 HAVE_LATEX_TRUE = #
 HAVE_LIBEXPAT = 
-HAVE_LIBEXPAT_FALSE = #
-HAVE_LIBEXPAT_TRUE = 
+HAVE_LIBEXPAT_FALSE = 
+HAVE_LIBEXPAT_TRUE = #
 HAVE_MATHSAT = 
 HAVE_MATHSAT_FALSE = 
 HAVE_MATHSAT_TRUE = #
@@ -206,7 +206,7 @@ LIBS = -lm
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/william/NuSMV-2.4.3/nusmv/helpers/missing --run makeinfo
 OBJEXT = o
 PACKAGE = NuSMV
 PACKAGE_BUGREPORT = nusmv@irst.itc.it
@@ -247,7 +247,7 @@ build_vendor = unknown
 cuddname = cudd-2.4.1.0
 datadir = ${prefix}/share
 exec_prefix = ${prefix}
-expat_libs = -L/usr/lib -lexpat
+expat_libs = 
 expatuserinc = 
 host = x86_64-unknown-linux-gnu
 host_alias = 
@@ -256,7 +256,7 @@ host_os = linux-gnu
 host_vendor = unknown
 includedir = ${prefix}/include
 infodir = ${prefix}/share/info
-install_sh = /home/wanglimin/NuSMV-2.4.3/nusmv/helpers/install-sh
+install_sh = /home/william/NuSMV-2.4.3/nusmv/helpers/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localstatedir = ${prefix}/var
@@ -273,7 +273,7 @@ mkdir_p = mkdir -p --
 oldincludedir = /usr/include
 prefix = /usr/local
 program_transform_name = s,x,x,
-readline_libs = -lreadline -ltermcap
+readline_libs = 
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 sysconfdir = ${prefix}/etc
@@ -290,14 +290,14 @@ AUTOMAKE_OPTIONS = subdir-objects
 CUDD_NAME = $(cuddname)
 CUDD_DIR = ../$(CUDD_NAME)
 INCLUDES = -I. -I.. -I$(top_srcdir)/src -I$(top_srcdir)/$(CUDD_DIR)/include
-#TRACE_PLUGINS = plugins/TraceExplainer.c  plugins/TracePlugin.c \
-#	        plugins/TraceTable.c plugins/TraceXmlDumper.c 
-
 TRACE_PLUGINS = plugins/TraceExplainer.c  plugins/TracePlugin.c \
-	        plugins/TraceTable.c plugins/TraceXmlDumper.c \
-		plugins/TraceXmlLoader.c 
+	        plugins/TraceTable.c plugins/TraceXmlDumper.c 
 
-#EXTRA_DIST = plugins/TraceXmlLoader.c
+#TRACE_PLUGINS = plugins/TraceExplainer.c  plugins/TracePlugin.c \
+#	        plugins/TraceTable.c plugins/TraceXmlDumper.c \
+#		plugins/TraceXmlLoader.c 
+
+EXTRA_DIST = plugins/TraceXmlLoader.c
 PKG_SOURCES = pkg_trace.h pkg_traceInt.h pkg_traceInt.h           \
 	TraceNode.h TraceNode_private.h Trace.h Trace_private.h   \
 	TraceManager.h plugins/TraceTable.h plugins/TraceTable_private.h  \
