@@ -31,7 +31,7 @@ next(state):=case
 
 
 
-MODULE L1Cache(attacker,victim,w_time)
+MODULE L1Cache(attacker,victim,w_time,cpu,predictor)
 VAR
 ExistStateSC:boolean;
 ExistStateOT:boolean;
@@ -41,13 +41,15 @@ ExistStateOT:boolean;
 --evict:=w_time=3;
 
 ASSIGN
-init(ExistStateSC):={INIT_SC};
+init(ExistStateSC):=TRUE;
 init(ExistStateOT):=TRUE;
 
 
 
 next(ExistStateSC):= case
-                        victim.cmd=flush|attacker.cmd=flush:FALSE;
+                        (cpu.state=predict)&(predictor.Predict=TFailed|predictor.Predict=NTFailed):FALSE;
+                         victim.cmd=flush:FALSE;
+                        --attacker.cmd=flush:FALSE;
                         victim.cmd=load|victim.cmd=store:TRUE;
                         w_time=3:FALSE;
                         TRUE: ExistStateSC;
@@ -122,7 +124,7 @@ VAR
 w_time:0..3;
 attacker: Attacker;
 victim: Victim;
-cache: L1Cache(attacker,victim,w_time);
+cache: L1Cache(attacker,victim,w_time,cpu,predictor);
 predictor:Predictor(attacker,victim);
 cpu:Processor(attacker,victim,cache,predictor,w_time);
 
@@ -131,8 +133,8 @@ ASSIGN
 init(w_time):=0;
 --init(cache.ExistStateSC):=FALSE;
 
-init(victim.cmd):={INIT_VICTIM};
-init(attacker.cmd):={INIT_ATTACKER};
+init(victim.cmd):=nop;
+init(attacker.cmd):=nop;
 
 next(victim.cmd):=case
 (cpu.state=predict)&(predictor.Predict=TFailed|predictor.Predict=NTFailed):nop;
@@ -150,8 +152,8 @@ next(attacker.cmd):=case
 
 
 next(w_time):=case
-                attacker.cmd=store&victim.cmd!=load&victim.cmd!=store&w_time=3:3;
-                attacker.cmd=store&victim.cmd!=load&victim.cmd!=store:w_time+1;
+                victim.cmd!=load&victim.cmd=store&w_time=3:3;
+                victim.cmd!=load&victim.cmd=store:w_time+1;
                 TRUE:0;
               esac;
 
@@ -161,9 +163,9 @@ next(w_time):=case
 -- evict:=w_time=3;
 
 
-SPEC
+-- SPEC
 --!EF(E[ cpu.isflush=1 U ( (cpu.state=squash) & EX(cache.ExistStateSC=TRUE) )]   )
-!EF(E[ cache.ExistStateSC=FALSE U ( (cpu.state=squash) & EX(cache.ExistStateSC=TRUE) )]   )
+CTLGRADSPEC !EF(E[ cache.ExistStateSC=FALSE U ( (cpu.state=squash) & EX(cache.ExistStateSC=TRUE) )]   )
 --!EF(cache.ExistStateSC=FALSE &E[ cache.ExistStateSC=FALSE U ( (cpu.state=squash) & EX(cache.ExistStateSC=TRUE) )]   )
 
 

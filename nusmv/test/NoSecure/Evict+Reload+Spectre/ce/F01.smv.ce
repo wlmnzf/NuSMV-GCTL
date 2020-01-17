@@ -1,0 +1,5296 @@
+*** This is NuSMV 2.4.3 (compiled on Sat Nov  2 02:04:02 UTC 2019)
+*** For more information on NuSMV see <http://nusmv.irst.itc.it>
+*** or email to <nusmv-users@irst.itc.it>.
+*** Please report bugs to <nusmv@irst.itc.it>.
+
+-- specification !(EF 100 (w_time = 2 & EX 0 ((attacker.cmd = branch & cache.ExistStateSC = FALSE) & EX 0 ((cpu.state = predict & (predictor.Predict = TFailed | predictor.Predict = NTFailed)) & EX 0 (cpu.state = squash & EX 0 cache.ExistStateSC = TRUE)))))  is false
+Trace Type: Counterexample
+-> Input: 1.1 <-
+-> State: 1.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 1.2 <-
+-> State: 1.2 <-
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 1.3 <-
+-> State: 1.3 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 1.4 <-
+-> State: 1.4 <-
+w_time = 1
+-> Input: 1.5 <-
+-> State: 1.5 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 1.6 <-
+-> State: 1.6 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 1.7 <-
+-> State: 1.7 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 1.8 <-
+-> State: 1.8 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 1.9 <-
+-> State: 1.9 <-
+cpu.state = normal
+
+-> Input: 2.3 <-
+-> State: 2.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 2.4 <-
+-> State: 2.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 2.5 <-
+-> State: 2.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 2.6 <-
+-> State: 2.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 2.7 <-
+-> State: 2.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 2.8 <-
+-> State: 2.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 2.9 <-
+-> State: 2.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 2.10 <-
+-> State: 2.10 <-
+cpu.state = normal
+
+-> Input: 3.3 <-
+-> State: 3.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 3.4 <-
+-> State: 3.4 <-
+attacker.cmd = store
+-> Input: 3.5 <-
+-> State: 3.5 <-
+w_time = 1
+-> Input: 3.6 <-
+-> State: 3.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 3.7 <-
+-> State: 3.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 3.8 <-
+-> State: 3.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 3.9 <-
+-> State: 3.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 3.10 <-
+-> State: 3.10 <-
+cpu.state = normal
+
+-> Input: 4.3 <-
+-> State: 4.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 4.4 <-
+-> State: 4.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 4.5 <-
+-> State: 4.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 4.6 <-
+-> State: 4.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 4.7 <-
+-> State: 4.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 4.8 <-
+-> State: 4.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 4.9 <-
+-> State: 4.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 4.10 <-
+-> State: 4.10 <-
+cpu.state = normal
+
+-> Input: 5.3 <-
+-> State: 5.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 5.4 <-
+-> State: 5.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 5.5 <-
+-> State: 5.5 <-
+w_time = 1
+-> Input: 5.6 <-
+-> State: 5.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 5.7 <-
+-> State: 5.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 5.8 <-
+-> State: 5.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 5.9 <-
+-> State: 5.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 5.10 <-
+-> State: 5.10 <-
+cpu.state = normal
+
+-> Input: 6.3 <-
+-> State: 6.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 6.4 <-
+-> State: 6.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 6.5 <-
+-> State: 6.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 6.6 <-
+-> State: 6.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 6.7 <-
+-> State: 6.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 6.8 <-
+-> State: 6.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 6.9 <-
+-> State: 6.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 6.10 <-
+-> State: 6.10 <-
+cpu.state = normal
+
+-> Input: 7.1 <-
+-> State: 7.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 7.2 <-
+-> State: 7.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 7.3 <-
+-> State: 7.3 <-
+attacker.cmd = load
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 7.4 <-
+-> State: 7.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 7.5 <-
+-> State: 7.5 <-
+cpu.state = normal
+-> Input: 7.6 <-
+-> State: 7.6 <-
+attacker.cmd = store
+-> Input: 7.7 <-
+-> State: 7.7 <-
+w_time = 1
+-> Input: 7.8 <-
+-> State: 7.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 7.9 <-
+-> State: 7.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 7.10 <-
+-> State: 7.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 7.11 <-
+-> State: 7.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 7.12 <-
+-> State: 7.12 <-
+cpu.state = normal
+
+-> Input: 8.1 <-
+-> State: 8.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 8.2 <-
+-> State: 8.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 8.3 <-
+-> State: 8.3 <-
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 8.4 <-
+-> State: 8.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 8.5 <-
+-> State: 8.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 8.6 <-
+-> State: 8.6 <-
+attacker.cmd = store
+-> Input: 8.7 <-
+-> State: 8.7 <-
+w_time = 1
+-> Input: 8.8 <-
+-> State: 8.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 8.9 <-
+-> State: 8.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 8.10 <-
+-> State: 8.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 8.11 <-
+-> State: 8.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 8.12 <-
+-> State: 8.12 <-
+cpu.state = normal
+
+-> Input: 9.1 <-
+-> State: 9.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 9.2 <-
+-> State: 9.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 9.3 <-
+-> State: 9.3 <-
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 9.4 <-
+-> State: 9.4 <-
+attacker.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 9.5 <-
+-> State: 9.5 <-
+cpu.state = normal
+-> Input: 9.6 <-
+-> State: 9.6 <-
+attacker.cmd = store
+-> Input: 9.7 <-
+-> State: 9.7 <-
+w_time = 1
+-> Input: 9.8 <-
+-> State: 9.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 9.9 <-
+-> State: 9.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 9.10 <-
+-> State: 9.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 9.11 <-
+-> State: 9.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 9.12 <-
+-> State: 9.12 <-
+cpu.state = normal
+
+-> Input: 10.1 <-
+-> State: 10.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 10.2 <-
+-> State: 10.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 10.3 <-
+-> State: 10.3 <-
+attacker.rw_addr = OT_addr
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 10.4 <-
+-> State: 10.4 <-
+attacker.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 10.5 <-
+-> State: 10.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 10.6 <-
+-> State: 10.6 <-
+attacker.cmd = store
+-> Input: 10.7 <-
+-> State: 10.7 <-
+w_time = 1
+-> Input: 10.8 <-
+-> State: 10.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 10.9 <-
+-> State: 10.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 10.10 <-
+-> State: 10.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 10.11 <-
+-> State: 10.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 10.12 <-
+-> State: 10.12 <-
+cpu.state = normal
+
+-> Input: 11.1 <-
+-> State: 11.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 11.2 <-
+-> State: 11.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 11.3 <-
+-> State: 11.3 <-
+attacker.cmd = load
+victim.cmd = store
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 11.4 <-
+-> State: 11.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 11.5 <-
+-> State: 11.5 <-
+cpu.state = normal
+-> Input: 11.6 <-
+-> State: 11.6 <-
+attacker.cmd = store
+-> Input: 11.7 <-
+-> State: 11.7 <-
+w_time = 1
+-> Input: 11.8 <-
+-> State: 11.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 11.9 <-
+-> State: 11.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 11.10 <-
+-> State: 11.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 11.11 <-
+-> State: 11.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 11.12 <-
+-> State: 11.12 <-
+cpu.state = normal
+
+-> Input: 12.1 <-
+-> State: 12.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 12.2 <-
+-> State: 12.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 12.3 <-
+-> State: 12.3 <-
+victim.cmd = store
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 12.4 <-
+-> State: 12.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 12.5 <-
+-> State: 12.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 12.6 <-
+-> State: 12.6 <-
+attacker.cmd = store
+-> Input: 12.7 <-
+-> State: 12.7 <-
+w_time = 1
+-> Input: 12.8 <-
+-> State: 12.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 12.9 <-
+-> State: 12.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 12.10 <-
+-> State: 12.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 12.11 <-
+-> State: 12.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 12.12 <-
+-> State: 12.12 <-
+cpu.state = normal
+
+-> Input: 13.2 <-
+-> State: 13.2 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 13.3 <-
+-> State: 13.3 <-
+attacker.rw_addr = SC_addr
+-> Input: 13.4 <-
+-> State: 13.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 13.5 <-
+-> State: 13.5 <-
+w_time = 1
+-> Input: 13.6 <-
+-> State: 13.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 13.7 <-
+-> State: 13.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 13.8 <-
+-> State: 13.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 13.9 <-
+-> State: 13.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 13.10 <-
+-> State: 13.10 <-
+cpu.state = normal
+
+-> Input: 14.3 <-
+-> State: 14.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 14.4 <-
+-> State: 14.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 14.5 <-
+-> State: 14.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 14.6 <-
+-> State: 14.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 14.7 <-
+-> State: 14.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 14.8 <-
+-> State: 14.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 14.9 <-
+-> State: 14.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 14.10 <-
+-> State: 14.10 <-
+cpu.state = normal
+
+-> Input: 15.3 <-
+-> State: 15.3 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 15.4 <-
+-> State: 15.4 <-
+w_time = 1
+-> Input: 15.5 <-
+-> State: 15.5 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 15.6 <-
+-> State: 15.6 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 15.7 <-
+-> State: 15.7 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 15.8 <-
+-> State: 15.8 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 15.9 <-
+-> State: 15.9 <-
+cpu.state = normal
+
+-> Input: 16.3 <-
+-> State: 16.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 16.4 <-
+-> State: 16.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 16.5 <-
+-> State: 16.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 16.6 <-
+-> State: 16.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 16.7 <-
+-> State: 16.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 16.8 <-
+-> State: 16.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 16.9 <-
+-> State: 16.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 16.10 <-
+-> State: 16.10 <-
+cpu.state = normal
+
+-> Input: 17.3 <-
+-> State: 17.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 17.4 <-
+-> State: 17.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 17.5 <-
+-> State: 17.5 <-
+w_time = 1
+-> Input: 17.6 <-
+-> State: 17.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 17.7 <-
+-> State: 17.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 17.8 <-
+-> State: 17.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 17.9 <-
+-> State: 17.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 17.10 <-
+-> State: 17.10 <-
+cpu.state = normal
+
+-> Input: 18.3 <-
+-> State: 18.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 18.4 <-
+-> State: 18.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 18.5 <-
+-> State: 18.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 18.6 <-
+-> State: 18.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 18.7 <-
+-> State: 18.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 18.8 <-
+-> State: 18.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 18.9 <-
+-> State: 18.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 18.10 <-
+-> State: 18.10 <-
+cpu.state = normal
+
+-> Input: 19.1 <-
+-> State: 19.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 19.2 <-
+-> State: 19.2 <-
+attacker.cmd = branch
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 19.3 <-
+-> State: 19.3 <-
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 19.4 <-
+-> State: 19.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 19.5 <-
+-> State: 19.5 <-
+cpu.state = normal
+-> Input: 19.6 <-
+-> State: 19.6 <-
+attacker.cmd = store
+-> Input: 19.7 <-
+-> State: 19.7 <-
+w_time = 1
+-> Input: 19.8 <-
+-> State: 19.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 19.9 <-
+-> State: 19.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 19.10 <-
+-> State: 19.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 19.11 <-
+-> State: 19.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 19.12 <-
+-> State: 19.12 <-
+cpu.state = normal
+
+-> Input: 20.1 <-
+-> State: 20.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 20.2 <-
+-> State: 20.2 <-
+attacker.cmd = branch
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 20.3 <-
+-> State: 20.3 <-
+attacker.rw_addr = SC_addr
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 20.4 <-
+-> State: 20.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 20.5 <-
+-> State: 20.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 20.6 <-
+-> State: 20.6 <-
+attacker.cmd = store
+-> Input: 20.7 <-
+-> State: 20.7 <-
+w_time = 1
+-> Input: 20.8 <-
+-> State: 20.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 20.9 <-
+-> State: 20.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 20.10 <-
+-> State: 20.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 20.11 <-
+-> State: 20.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 20.12 <-
+-> State: 20.12 <-
+cpu.state = normal
+
+-> Input: 21.1 <-
+-> State: 21.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 21.2 <-
+-> State: 21.2 <-
+attacker.cmd = branch
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 21.3 <-
+-> State: 21.3 <-
+attacker.cmd = load
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 21.4 <-
+-> State: 21.4 <-
+attacker.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 21.5 <-
+-> State: 21.5 <-
+cpu.state = normal
+-> Input: 21.6 <-
+-> State: 21.6 <-
+attacker.cmd = store
+-> Input: 21.7 <-
+-> State: 21.7 <-
+w_time = 1
+-> Input: 21.8 <-
+-> State: 21.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 21.9 <-
+-> State: 21.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 21.10 <-
+-> State: 21.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 21.11 <-
+-> State: 21.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 21.12 <-
+-> State: 21.12 <-
+cpu.state = normal
+
+-> Input: 22.1 <-
+-> State: 22.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 22.2 <-
+-> State: 22.2 <-
+attacker.cmd = branch
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 22.3 <-
+-> State: 22.3 <-
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 22.4 <-
+-> State: 22.4 <-
+attacker.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 22.5 <-
+-> State: 22.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 22.6 <-
+-> State: 22.6 <-
+attacker.cmd = store
+-> Input: 22.7 <-
+-> State: 22.7 <-
+w_time = 1
+-> Input: 22.8 <-
+-> State: 22.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 22.9 <-
+-> State: 22.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 22.10 <-
+-> State: 22.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 22.11 <-
+-> State: 22.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 22.12 <-
+-> State: 22.12 <-
+cpu.state = normal
+
+-> Input: 23.1 <-
+-> State: 23.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 23.2 <-
+-> State: 23.2 <-
+attacker.cmd = branch
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 23.3 <-
+-> State: 23.3 <-
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 23.4 <-
+-> State: 23.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 23.5 <-
+-> State: 23.5 <-
+cpu.state = normal
+-> Input: 23.6 <-
+-> State: 23.6 <-
+attacker.cmd = store
+-> Input: 23.7 <-
+-> State: 23.7 <-
+w_time = 1
+-> Input: 23.8 <-
+-> State: 23.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 23.9 <-
+-> State: 23.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 23.10 <-
+-> State: 23.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 23.11 <-
+-> State: 23.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 23.12 <-
+-> State: 23.12 <-
+cpu.state = normal
+
+-> Input: 24.1 <-
+-> State: 24.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 24.2 <-
+-> State: 24.2 <-
+attacker.cmd = branch
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 24.3 <-
+-> State: 24.3 <-
+attacker.rw_addr = SC_addr
+victim.cmd = store
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 24.4 <-
+-> State: 24.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 24.5 <-
+-> State: 24.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 24.6 <-
+-> State: 24.6 <-
+attacker.cmd = store
+-> Input: 24.7 <-
+-> State: 24.7 <-
+w_time = 1
+-> Input: 24.8 <-
+-> State: 24.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 24.9 <-
+-> State: 24.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 24.10 <-
+-> State: 24.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 24.11 <-
+-> State: 24.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 24.12 <-
+-> State: 24.12 <-
+cpu.state = normal
+
+-> Input: 25.2 <-
+-> State: 25.2 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 25.3 <-
+-> State: 25.3 <-
+victim.cmd = nop
+-> Input: 25.4 <-
+-> State: 25.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 25.5 <-
+-> State: 25.5 <-
+w_time = 1
+-> Input: 25.6 <-
+-> State: 25.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 25.7 <-
+-> State: 25.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 25.8 <-
+-> State: 25.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 25.9 <-
+-> State: 25.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 25.10 <-
+-> State: 25.10 <-
+cpu.state = normal
+
+-> Input: 26.3 <-
+-> State: 26.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 26.4 <-
+-> State: 26.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 26.5 <-
+-> State: 26.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 26.6 <-
+-> State: 26.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 26.7 <-
+-> State: 26.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 26.8 <-
+-> State: 26.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 26.9 <-
+-> State: 26.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 26.10 <-
+-> State: 26.10 <-
+cpu.state = normal
+
+-> Input: 27.3 <-
+-> State: 27.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 27.4 <-
+-> State: 27.4 <-
+attacker.cmd = store
+-> Input: 27.5 <-
+-> State: 27.5 <-
+w_time = 1
+-> Input: 27.6 <-
+-> State: 27.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 27.7 <-
+-> State: 27.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 27.8 <-
+-> State: 27.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 27.9 <-
+-> State: 27.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 27.10 <-
+-> State: 27.10 <-
+cpu.state = normal
+
+-> Input: 28.3 <-
+-> State: 28.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 28.4 <-
+-> State: 28.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 28.5 <-
+-> State: 28.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 28.6 <-
+-> State: 28.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 28.7 <-
+-> State: 28.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 28.8 <-
+-> State: 28.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 28.9 <-
+-> State: 28.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 28.10 <-
+-> State: 28.10 <-
+cpu.state = normal
+
+-> Input: 29.3 <-
+-> State: 29.3 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 29.4 <-
+-> State: 29.4 <-
+w_time = 1
+-> Input: 29.5 <-
+-> State: 29.5 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 29.6 <-
+-> State: 29.6 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 29.7 <-
+-> State: 29.7 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 29.8 <-
+-> State: 29.8 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 29.9 <-
+-> State: 29.9 <-
+cpu.state = normal
+
+-> Input: 30.3 <-
+-> State: 30.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 30.4 <-
+-> State: 30.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 30.5 <-
+-> State: 30.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 30.6 <-
+-> State: 30.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 30.7 <-
+-> State: 30.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 30.8 <-
+-> State: 30.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 30.9 <-
+-> State: 30.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 30.10 <-
+-> State: 30.10 <-
+cpu.state = normal
+
+-> Input: 31.1 <-
+-> State: 31.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 31.2 <-
+-> State: 31.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 31.3 <-
+-> State: 31.3 <-
+attacker.cmd = load
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 31.4 <-
+-> State: 31.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 31.5 <-
+-> State: 31.5 <-
+cpu.state = normal
+-> Input: 31.6 <-
+-> State: 31.6 <-
+attacker.cmd = store
+-> Input: 31.7 <-
+-> State: 31.7 <-
+w_time = 1
+-> Input: 31.8 <-
+-> State: 31.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 31.9 <-
+-> State: 31.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 31.10 <-
+-> State: 31.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 31.11 <-
+-> State: 31.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 31.12 <-
+-> State: 31.12 <-
+cpu.state = normal
+
+-> Input: 32.1 <-
+-> State: 32.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 32.2 <-
+-> State: 32.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 32.3 <-
+-> State: 32.3 <-
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 32.4 <-
+-> State: 32.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 32.5 <-
+-> State: 32.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 32.6 <-
+-> State: 32.6 <-
+attacker.cmd = store
+-> Input: 32.7 <-
+-> State: 32.7 <-
+w_time = 1
+-> Input: 32.8 <-
+-> State: 32.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 32.9 <-
+-> State: 32.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 32.10 <-
+-> State: 32.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 32.11 <-
+-> State: 32.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 32.12 <-
+-> State: 32.12 <-
+cpu.state = normal
+
+-> Input: 33.1 <-
+-> State: 33.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 33.2 <-
+-> State: 33.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 33.3 <-
+-> State: 33.3 <-
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 33.4 <-
+-> State: 33.4 <-
+attacker.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 33.5 <-
+-> State: 33.5 <-
+cpu.state = normal
+-> Input: 33.6 <-
+-> State: 33.6 <-
+attacker.cmd = store
+-> Input: 33.7 <-
+-> State: 33.7 <-
+w_time = 1
+-> Input: 33.8 <-
+-> State: 33.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 33.9 <-
+-> State: 33.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 33.10 <-
+-> State: 33.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 33.11 <-
+-> State: 33.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 33.12 <-
+-> State: 33.12 <-
+cpu.state = normal
+
+-> Input: 34.1 <-
+-> State: 34.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 34.2 <-
+-> State: 34.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 34.3 <-
+-> State: 34.3 <-
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 34.4 <-
+-> State: 34.4 <-
+attacker.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 34.5 <-
+-> State: 34.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 34.6 <-
+-> State: 34.6 <-
+attacker.cmd = store
+-> Input: 34.7 <-
+-> State: 34.7 <-
+w_time = 1
+-> Input: 34.8 <-
+-> State: 34.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 34.9 <-
+-> State: 34.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 34.10 <-
+-> State: 34.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 34.11 <-
+-> State: 34.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 34.12 <-
+-> State: 34.12 <-
+cpu.state = normal
+
+-> Input: 35.1 <-
+-> State: 35.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 35.2 <-
+-> State: 35.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 35.3 <-
+-> State: 35.3 <-
+attacker.cmd = load
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 35.4 <-
+-> State: 35.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 35.5 <-
+-> State: 35.5 <-
+cpu.state = normal
+-> Input: 35.6 <-
+-> State: 35.6 <-
+attacker.cmd = store
+-> Input: 35.7 <-
+-> State: 35.7 <-
+w_time = 1
+-> Input: 35.8 <-
+-> State: 35.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 35.9 <-
+-> State: 35.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 35.10 <-
+-> State: 35.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 35.11 <-
+-> State: 35.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 35.12 <-
+-> State: 35.12 <-
+cpu.state = normal
+
+-> Input: 36.1 <-
+-> State: 36.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 36.2 <-
+-> State: 36.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 36.3 <-
+-> State: 36.3 <-
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 36.4 <-
+-> State: 36.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 36.5 <-
+-> State: 36.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 36.6 <-
+-> State: 36.6 <-
+attacker.cmd = store
+-> Input: 36.7 <-
+-> State: 36.7 <-
+w_time = 1
+-> Input: 36.8 <-
+-> State: 36.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 36.9 <-
+-> State: 36.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 36.10 <-
+-> State: 36.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 36.11 <-
+-> State: 36.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 36.12 <-
+-> State: 36.12 <-
+cpu.state = normal
+
+-> Input: 37.2 <-
+-> State: 37.2 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 37.3 <-
+-> State: 37.3 <-
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+-> Input: 37.4 <-
+-> State: 37.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 37.5 <-
+-> State: 37.5 <-
+w_time = 1
+-> Input: 37.6 <-
+-> State: 37.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 37.7 <-
+-> State: 37.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 37.8 <-
+-> State: 37.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 37.9 <-
+-> State: 37.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 37.10 <-
+-> State: 37.10 <-
+cpu.state = normal
+
+-> Input: 38.3 <-
+-> State: 38.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 38.4 <-
+-> State: 38.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 38.5 <-
+-> State: 38.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 38.6 <-
+-> State: 38.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 38.7 <-
+-> State: 38.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 38.8 <-
+-> State: 38.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 38.9 <-
+-> State: 38.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 38.10 <-
+-> State: 38.10 <-
+cpu.state = normal
+
+-> Input: 39.3 <-
+-> State: 39.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 39.4 <-
+-> State: 39.4 <-
+attacker.cmd = store
+-> Input: 39.5 <-
+-> State: 39.5 <-
+w_time = 1
+-> Input: 39.6 <-
+-> State: 39.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 39.7 <-
+-> State: 39.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 39.8 <-
+-> State: 39.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 39.9 <-
+-> State: 39.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 39.10 <-
+-> State: 39.10 <-
+cpu.state = normal
+
+-> Input: 40.3 <-
+-> State: 40.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 40.4 <-
+-> State: 40.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 40.5 <-
+-> State: 40.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 40.6 <-
+-> State: 40.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 40.7 <-
+-> State: 40.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 40.8 <-
+-> State: 40.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 40.9 <-
+-> State: 40.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 40.10 <-
+-> State: 40.10 <-
+cpu.state = normal
+
+-> Input: 41.3 <-
+-> State: 41.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 41.4 <-
+-> State: 41.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 41.5 <-
+-> State: 41.5 <-
+w_time = 1
+-> Input: 41.6 <-
+-> State: 41.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 41.7 <-
+-> State: 41.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 41.8 <-
+-> State: 41.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 41.9 <-
+-> State: 41.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 41.10 <-
+-> State: 41.10 <-
+cpu.state = normal
+
+-> Input: 42.3 <-
+-> State: 42.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 42.4 <-
+-> State: 42.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 42.5 <-
+-> State: 42.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 42.6 <-
+-> State: 42.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 42.7 <-
+-> State: 42.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 42.8 <-
+-> State: 42.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 42.9 <-
+-> State: 42.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 42.10 <-
+-> State: 42.10 <-
+cpu.state = normal
+
+-> Input: 43.1 <-
+-> State: 43.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 43.2 <-
+-> State: 43.2 <-
+attacker.cmd = branch
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 43.3 <-
+-> State: 43.3 <-
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 43.4 <-
+-> State: 43.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 43.5 <-
+-> State: 43.5 <-
+cpu.state = normal
+-> Input: 43.6 <-
+-> State: 43.6 <-
+attacker.cmd = store
+-> Input: 43.7 <-
+-> State: 43.7 <-
+w_time = 1
+-> Input: 43.8 <-
+-> State: 43.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 43.9 <-
+-> State: 43.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 43.10 <-
+-> State: 43.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 43.11 <-
+-> State: 43.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 43.12 <-
+-> State: 43.12 <-
+cpu.state = normal
+
+-> Input: 44.1 <-
+-> State: 44.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 44.2 <-
+-> State: 44.2 <-
+attacker.cmd = branch
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 44.3 <-
+-> State: 44.3 <-
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 44.4 <-
+-> State: 44.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 44.5 <-
+-> State: 44.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 44.6 <-
+-> State: 44.6 <-
+attacker.cmd = store
+-> Input: 44.7 <-
+-> State: 44.7 <-
+w_time = 1
+-> Input: 44.8 <-
+-> State: 44.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 44.9 <-
+-> State: 44.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 44.10 <-
+-> State: 44.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 44.11 <-
+-> State: 44.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 44.12 <-
+-> State: 44.12 <-
+cpu.state = normal
+
+-> Input: 45.1 <-
+-> State: 45.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 45.2 <-
+-> State: 45.2 <-
+attacker.cmd = branch
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 45.3 <-
+-> State: 45.3 <-
+attacker.cmd = load
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 45.4 <-
+-> State: 45.4 <-
+attacker.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 45.5 <-
+-> State: 45.5 <-
+cpu.state = normal
+-> Input: 45.6 <-
+-> State: 45.6 <-
+attacker.cmd = store
+-> Input: 45.7 <-
+-> State: 45.7 <-
+w_time = 1
+-> Input: 45.8 <-
+-> State: 45.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 45.9 <-
+-> State: 45.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 45.10 <-
+-> State: 45.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 45.11 <-
+-> State: 45.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 45.12 <-
+-> State: 45.12 <-
+cpu.state = normal
+
+-> Input: 46.1 <-
+-> State: 46.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 46.2 <-
+-> State: 46.2 <-
+attacker.cmd = branch
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 46.3 <-
+-> State: 46.3 <-
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 46.4 <-
+-> State: 46.4 <-
+attacker.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 46.5 <-
+-> State: 46.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 46.6 <-
+-> State: 46.6 <-
+attacker.cmd = store
+-> Input: 46.7 <-
+-> State: 46.7 <-
+w_time = 1
+-> Input: 46.8 <-
+-> State: 46.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 46.9 <-
+-> State: 46.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 46.10 <-
+-> State: 46.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 46.11 <-
+-> State: 46.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 46.12 <-
+-> State: 46.12 <-
+cpu.state = normal
+
+-> Input: 47.1 <-
+-> State: 47.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 47.2 <-
+-> State: 47.2 <-
+attacker.cmd = branch
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 47.3 <-
+-> State: 47.3 <-
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 47.4 <-
+-> State: 47.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 47.5 <-
+-> State: 47.5 <-
+cpu.state = normal
+-> Input: 47.6 <-
+-> State: 47.6 <-
+attacker.cmd = store
+-> Input: 47.7 <-
+-> State: 47.7 <-
+w_time = 1
+-> Input: 47.8 <-
+-> State: 47.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 47.9 <-
+-> State: 47.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 47.10 <-
+-> State: 47.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 47.11 <-
+-> State: 47.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 47.12 <-
+-> State: 47.12 <-
+cpu.state = normal
+
+-> Input: 48.1 <-
+-> State: 48.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 48.2 <-
+-> State: 48.2 <-
+attacker.cmd = branch
+victim.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 48.3 <-
+-> State: 48.3 <-
+attacker.rw_addr = SC_addr
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 48.4 <-
+-> State: 48.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 48.5 <-
+-> State: 48.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 48.6 <-
+-> State: 48.6 <-
+attacker.cmd = store
+-> Input: 48.7 <-
+-> State: 48.7 <-
+w_time = 1
+-> Input: 48.8 <-
+-> State: 48.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 48.9 <-
+-> State: 48.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 48.10 <-
+-> State: 48.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 48.11 <-
+-> State: 48.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 48.12 <-
+-> State: 48.12 <-
+cpu.state = normal
+
+-> Input: 49.2 <-
+-> State: 49.2 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = load
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 49.3 <-
+-> State: 49.3 <-
+victim.cmd = nop
+-> Input: 49.4 <-
+-> State: 49.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 49.5 <-
+-> State: 49.5 <-
+w_time = 1
+-> Input: 49.6 <-
+-> State: 49.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 49.7 <-
+-> State: 49.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 49.8 <-
+-> State: 49.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 49.9 <-
+-> State: 49.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 49.10 <-
+-> State: 49.10 <-
+cpu.state = normal
+
+-> Input: 50.3 <-
+-> State: 50.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 50.4 <-
+-> State: 50.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 50.5 <-
+-> State: 50.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 50.6 <-
+-> State: 50.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 50.7 <-
+-> State: 50.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 50.8 <-
+-> State: 50.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 50.9 <-
+-> State: 50.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 50.10 <-
+-> State: 50.10 <-
+cpu.state = normal
+
+-> Input: 51.3 <-
+-> State: 51.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 51.4 <-
+-> State: 51.4 <-
+attacker.cmd = store
+-> Input: 51.5 <-
+-> State: 51.5 <-
+w_time = 1
+-> Input: 51.6 <-
+-> State: 51.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 51.7 <-
+-> State: 51.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 51.8 <-
+-> State: 51.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 51.9 <-
+-> State: 51.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 51.10 <-
+-> State: 51.10 <-
+cpu.state = normal
+
+-> Input: 52.3 <-
+-> State: 52.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 52.4 <-
+-> State: 52.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 52.5 <-
+-> State: 52.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 52.6 <-
+-> State: 52.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 52.7 <-
+-> State: 52.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 52.8 <-
+-> State: 52.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 52.9 <-
+-> State: 52.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 52.10 <-
+-> State: 52.10 <-
+cpu.state = normal
+
+-> Input: 53.3 <-
+-> State: 53.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 53.4 <-
+-> State: 53.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 53.5 <-
+-> State: 53.5 <-
+w_time = 1
+-> Input: 53.6 <-
+-> State: 53.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 53.7 <-
+-> State: 53.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 53.8 <-
+-> State: 53.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 53.9 <-
+-> State: 53.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 53.10 <-
+-> State: 53.10 <-
+cpu.state = normal
+
+-> Input: 54.3 <-
+-> State: 54.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 54.4 <-
+-> State: 54.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 54.5 <-
+-> State: 54.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 54.6 <-
+-> State: 54.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 54.7 <-
+-> State: 54.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 54.8 <-
+-> State: 54.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 54.9 <-
+-> State: 54.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 54.10 <-
+-> State: 54.10 <-
+cpu.state = normal
+
+-> Input: 55.1 <-
+-> State: 55.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 55.2 <-
+-> State: 55.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 55.3 <-
+-> State: 55.3 <-
+attacker.cmd = load
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 55.4 <-
+-> State: 55.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 55.5 <-
+-> State: 55.5 <-
+cpu.state = normal
+-> Input: 55.6 <-
+-> State: 55.6 <-
+attacker.cmd = store
+-> Input: 55.7 <-
+-> State: 55.7 <-
+w_time = 1
+-> Input: 55.8 <-
+-> State: 55.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 55.9 <-
+-> State: 55.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 55.10 <-
+-> State: 55.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 55.11 <-
+-> State: 55.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 55.12 <-
+-> State: 55.12 <-
+cpu.state = normal
+
+-> Input: 56.1 <-
+-> State: 56.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 56.2 <-
+-> State: 56.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 56.3 <-
+-> State: 56.3 <-
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 56.4 <-
+-> State: 56.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 56.5 <-
+-> State: 56.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 56.6 <-
+-> State: 56.6 <-
+attacker.cmd = store
+-> Input: 56.7 <-
+-> State: 56.7 <-
+w_time = 1
+-> Input: 56.8 <-
+-> State: 56.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 56.9 <-
+-> State: 56.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 56.10 <-
+-> State: 56.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 56.11 <-
+-> State: 56.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 56.12 <-
+-> State: 56.12 <-
+cpu.state = normal
+
+-> Input: 57.1 <-
+-> State: 57.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 57.2 <-
+-> State: 57.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 57.3 <-
+-> State: 57.3 <-
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 57.4 <-
+-> State: 57.4 <-
+attacker.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 57.5 <-
+-> State: 57.5 <-
+cpu.state = normal
+-> Input: 57.6 <-
+-> State: 57.6 <-
+attacker.cmd = store
+-> Input: 57.7 <-
+-> State: 57.7 <-
+w_time = 1
+-> Input: 57.8 <-
+-> State: 57.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 57.9 <-
+-> State: 57.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 57.10 <-
+-> State: 57.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 57.11 <-
+-> State: 57.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 57.12 <-
+-> State: 57.12 <-
+cpu.state = normal
+
+-> Input: 58.1 <-
+-> State: 58.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 58.2 <-
+-> State: 58.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 58.3 <-
+-> State: 58.3 <-
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 58.4 <-
+-> State: 58.4 <-
+attacker.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 58.5 <-
+-> State: 58.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 58.6 <-
+-> State: 58.6 <-
+attacker.cmd = store
+-> Input: 58.7 <-
+-> State: 58.7 <-
+w_time = 1
+-> Input: 58.8 <-
+-> State: 58.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 58.9 <-
+-> State: 58.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 58.10 <-
+-> State: 58.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 58.11 <-
+-> State: 58.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 58.12 <-
+-> State: 58.12 <-
+cpu.state = normal
+
+-> Input: 59.1 <-
+-> State: 59.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 59.2 <-
+-> State: 59.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 59.3 <-
+-> State: 59.3 <-
+attacker.cmd = load
+victim.cmd = store
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 59.4 <-
+-> State: 59.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 59.5 <-
+-> State: 59.5 <-
+cpu.state = normal
+-> Input: 59.6 <-
+-> State: 59.6 <-
+attacker.cmd = store
+-> Input: 59.7 <-
+-> State: 59.7 <-
+w_time = 1
+-> Input: 59.8 <-
+-> State: 59.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 59.9 <-
+-> State: 59.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 59.10 <-
+-> State: 59.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 59.11 <-
+-> State: 59.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 59.12 <-
+-> State: 59.12 <-
+cpu.state = normal
+
+-> Input: 60.1 <-
+-> State: 60.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 60.2 <-
+-> State: 60.2 <-
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 60.3 <-
+-> State: 60.3 <-
+victim.cmd = store
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 60.4 <-
+-> State: 60.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 60.5 <-
+-> State: 60.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 60.6 <-
+-> State: 60.6 <-
+attacker.cmd = store
+-> Input: 60.7 <-
+-> State: 60.7 <-
+w_time = 1
+-> Input: 60.8 <-
+-> State: 60.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 60.9 <-
+-> State: 60.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 60.10 <-
+-> State: 60.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 60.11 <-
+-> State: 60.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 60.12 <-
+-> State: 60.12 <-
+cpu.state = normal
+
+-> Input: 61.2 <-
+-> State: 61.2 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 61.3 <-
+-> State: 61.3 <-
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+-> Input: 61.4 <-
+-> State: 61.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 61.5 <-
+-> State: 61.5 <-
+w_time = 1
+-> Input: 61.6 <-
+-> State: 61.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 61.7 <-
+-> State: 61.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 61.8 <-
+-> State: 61.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 61.9 <-
+-> State: 61.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 61.10 <-
+-> State: 61.10 <-
+cpu.state = normal
+
+-> Input: 62.3 <-
+-> State: 62.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 62.4 <-
+-> State: 62.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 62.5 <-
+-> State: 62.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 62.6 <-
+-> State: 62.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 62.7 <-
+-> State: 62.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 62.8 <-
+-> State: 62.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 62.9 <-
+-> State: 62.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 62.10 <-
+-> State: 62.10 <-
+cpu.state = normal
+
+-> Input: 63.3 <-
+-> State: 63.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 63.4 <-
+-> State: 63.4 <-
+attacker.cmd = store
+-> Input: 63.5 <-
+-> State: 63.5 <-
+w_time = 1
+-> Input: 63.6 <-
+-> State: 63.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 63.7 <-
+-> State: 63.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 63.8 <-
+-> State: 63.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 63.9 <-
+-> State: 63.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 63.10 <-
+-> State: 63.10 <-
+cpu.state = normal
+
+-> Input: 64.3 <-
+-> State: 64.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 64.4 <-
+-> State: 64.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 64.5 <-
+-> State: 64.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 64.6 <-
+-> State: 64.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 64.7 <-
+-> State: 64.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 64.8 <-
+-> State: 64.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 64.9 <-
+-> State: 64.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 64.10 <-
+-> State: 64.10 <-
+cpu.state = normal
+
+-> Input: 65.3 <-
+-> State: 65.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 65.4 <-
+-> State: 65.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 65.5 <-
+-> State: 65.5 <-
+w_time = 1
+-> Input: 65.6 <-
+-> State: 65.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 65.7 <-
+-> State: 65.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 65.8 <-
+-> State: 65.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 65.9 <-
+-> State: 65.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 65.10 <-
+-> State: 65.10 <-
+cpu.state = normal
+
+-> Input: 66.3 <-
+-> State: 66.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 66.4 <-
+-> State: 66.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 66.5 <-
+-> State: 66.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 66.6 <-
+-> State: 66.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 66.7 <-
+-> State: 66.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 66.8 <-
+-> State: 66.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 66.9 <-
+-> State: 66.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 66.10 <-
+-> State: 66.10 <-
+cpu.state = normal
+
+-> Input: 67.1 <-
+-> State: 67.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 67.2 <-
+-> State: 67.2 <-
+attacker.cmd = branch
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 67.3 <-
+-> State: 67.3 <-
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 67.4 <-
+-> State: 67.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 67.5 <-
+-> State: 67.5 <-
+cpu.state = normal
+-> Input: 67.6 <-
+-> State: 67.6 <-
+attacker.cmd = store
+-> Input: 67.7 <-
+-> State: 67.7 <-
+w_time = 1
+-> Input: 67.8 <-
+-> State: 67.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 67.9 <-
+-> State: 67.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 67.10 <-
+-> State: 67.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 67.11 <-
+-> State: 67.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 67.12 <-
+-> State: 67.12 <-
+cpu.state = normal
+
+-> Input: 68.1 <-
+-> State: 68.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 68.2 <-
+-> State: 68.2 <-
+attacker.cmd = branch
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 68.3 <-
+-> State: 68.3 <-
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 68.4 <-
+-> State: 68.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 68.5 <-
+-> State: 68.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 68.6 <-
+-> State: 68.6 <-
+attacker.cmd = store
+-> Input: 68.7 <-
+-> State: 68.7 <-
+w_time = 1
+-> Input: 68.8 <-
+-> State: 68.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 68.9 <-
+-> State: 68.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 68.10 <-
+-> State: 68.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 68.11 <-
+-> State: 68.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 68.12 <-
+-> State: 68.12 <-
+cpu.state = normal
+
+-> Input: 69.1 <-
+-> State: 69.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 69.2 <-
+-> State: 69.2 <-
+attacker.cmd = branch
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 69.3 <-
+-> State: 69.3 <-
+attacker.cmd = load
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 69.4 <-
+-> State: 69.4 <-
+attacker.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 69.5 <-
+-> State: 69.5 <-
+cpu.state = normal
+-> Input: 69.6 <-
+-> State: 69.6 <-
+attacker.cmd = store
+-> Input: 69.7 <-
+-> State: 69.7 <-
+w_time = 1
+-> Input: 69.8 <-
+-> State: 69.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 69.9 <-
+-> State: 69.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 69.10 <-
+-> State: 69.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 69.11 <-
+-> State: 69.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 69.12 <-
+-> State: 69.12 <-
+cpu.state = normal
+
+-> Input: 70.1 <-
+-> State: 70.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 70.2 <-
+-> State: 70.2 <-
+attacker.cmd = branch
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 70.3 <-
+-> State: 70.3 <-
+victim.cmd = nop
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 70.4 <-
+-> State: 70.4 <-
+attacker.cmd = nop
+predictor.Predict = NTSuccess
+cpu.state = squash
+Loop starts here
+-> Input: 70.5 <-
+-> State: 70.5 <-
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 70.6 <-
+-> State: 70.6 <-
+attacker.cmd = store
+-> Input: 70.7 <-
+-> State: 70.7 <-
+w_time = 1
+-> Input: 70.8 <-
+-> State: 70.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 70.9 <-
+-> State: 70.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 70.10 <-
+-> State: 70.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 70.11 <-
+-> State: 70.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 70.12 <-
+-> State: 70.12 <-
+cpu.state = normal
+
+-> Input: 71.1 <-
+-> State: 71.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+-> Input: 71.2 <-
+-> State: 71.2 <-
+attacker.cmd = branch
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 71.3 <-
+-> State: 71.3 <-
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+predictor.Predict = NTFailed
+cpu.state = predict
+-> Input: 71.4 <-
+-> State: 71.4 <-
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+Loop starts here
+-> Input: 71.5 <-
+-> State: 71.5 <-
+cpu.state = normal
+-> Input: 71.6 <-
+-> State: 71.6 <-
+attacker.cmd = store
+-> Input: 71.7 <-
+-> State: 71.7 <-
+w_time = 1
+-> Input: 71.8 <-
+-> State: 71.8 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 71.9 <-
+-> State: 71.9 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 71.10 <-
+-> State: 71.10 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 71.11 <-
+-> State: 71.11 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 71.12 <-
+-> State: 71.12 <-
+cpu.state = normal
+
+-> Input: 72.2 <-
+-> State: 72.2 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 72.3 <-
+-> State: 72.3 <-
+w_time = 1
+attacker.cmd = load
+-> Input: 72.4 <-
+-> State: 72.4 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 72.5 <-
+-> State: 72.5 <-
+w_time = 1
+-> Input: 72.6 <-
+-> State: 72.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 72.7 <-
+-> State: 72.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 72.8 <-
+-> State: 72.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 72.9 <-
+-> State: 72.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 72.10 <-
+-> State: 72.10 <-
+cpu.state = normal
+
+-> Input: 73.3 <-
+-> State: 73.3 <-
+w_time = 1
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 73.4 <-
+-> State: 73.4 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 73.5 <-
+-> State: 73.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 73.6 <-
+-> State: 73.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 73.7 <-
+-> State: 73.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 73.8 <-
+-> State: 73.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 73.9 <-
+-> State: 73.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 73.10 <-
+-> State: 73.10 <-
+cpu.state = normal
+
+-> Input: 74.3 <-
+-> State: 74.3 <-
+w_time = 1
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 74.4 <-
+-> State: 74.4 <-
+w_time = 0
+attacker.cmd = store
+-> Input: 74.5 <-
+-> State: 74.5 <-
+w_time = 1
+-> Input: 74.6 <-
+-> State: 74.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 74.7 <-
+-> State: 74.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 74.8 <-
+-> State: 74.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 74.9 <-
+-> State: 74.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 74.10 <-
+-> State: 74.10 <-
+cpu.state = normal
+
+-> Input: 75.3 <-
+-> State: 75.3 <-
+w_time = 1
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 75.4 <-
+-> State: 75.4 <-
+w_time = 0
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 75.5 <-
+-> State: 75.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 75.6 <-
+-> State: 75.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 75.7 <-
+-> State: 75.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 75.8 <-
+-> State: 75.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 75.9 <-
+-> State: 75.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 75.10 <-
+-> State: 75.10 <-
+cpu.state = normal
+
+-> Input: 76.3 <-
+-> State: 76.3 <-
+w_time = 1
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 76.4 <-
+-> State: 76.4 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 76.5 <-
+-> State: 76.5 <-
+w_time = 1
+-> Input: 76.6 <-
+-> State: 76.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 76.7 <-
+-> State: 76.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 76.8 <-
+-> State: 76.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 76.9 <-
+-> State: 76.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 76.10 <-
+-> State: 76.10 <-
+cpu.state = normal
+
+-> Input: 77.1 <-
+-> State: 77.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+Loop starts here
+-> Input: 77.2 <-
+-> State: 77.2 <-
+attacker.cmd = store
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 77.3 <-
+-> State: 77.3 <-
+w_time = 1
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+End loop
+-> Input: 77.4 <-
+-> State: 77.4 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 77.5 <-
+-> State: 77.5 <-
+w_time = 1
+-> Input: 77.6 <-
+-> State: 77.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 77.7 <-
+-> State: 77.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 77.8 <-
+-> State: 77.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 77.9 <-
+-> State: 77.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 77.10 <-
+-> State: 77.10 <-
+cpu.state = normal
+
+-> Input: 78.3 <-
+-> State: 78.3 <-
+w_time = 1
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 78.4 <-
+-> State: 78.4 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 78.5 <-
+-> State: 78.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 78.6 <-
+-> State: 78.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 78.7 <-
+-> State: 78.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 78.8 <-
+-> State: 78.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 78.9 <-
+-> State: 78.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 78.10 <-
+-> State: 78.10 <-
+cpu.state = normal
+
+-> Input: 79.1 <-
+-> State: 79.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+Loop starts here
+-> Input: 79.2 <-
+-> State: 79.2 <-
+attacker.cmd = store
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 79.3 <-
+-> State: 79.3 <-
+w_time = 1
+attacker.cmd = load
+End loop
+-> Input: 79.4 <-
+-> State: 79.4 <-
+w_time = 0
+attacker.cmd = store
+-> Input: 79.5 <-
+-> State: 79.5 <-
+w_time = 1
+-> Input: 79.6 <-
+-> State: 79.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 79.7 <-
+-> State: 79.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 79.8 <-
+-> State: 79.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 79.9 <-
+-> State: 79.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 79.10 <-
+-> State: 79.10 <-
+cpu.state = normal
+
+-> Input: 80.3 <-
+-> State: 80.3 <-
+w_time = 1
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 80.4 <-
+-> State: 80.4 <-
+w_time = 0
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 80.5 <-
+-> State: 80.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 80.6 <-
+-> State: 80.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 80.7 <-
+-> State: 80.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 80.8 <-
+-> State: 80.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 80.9 <-
+-> State: 80.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 80.10 <-
+-> State: 80.10 <-
+cpu.state = normal
+
+-> Input: 81.1 <-
+-> State: 81.1 <-
+w_time = 0
+attacker.cmd = nop
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 0
+cache.ExistStateOT = 1
+predictor.Predict = NTSuccess
+cpu.state = normal
+Loop starts here
+-> Input: 81.2 <-
+-> State: 81.2 <-
+attacker.cmd = store
+victim.cmd = nop
+cache.ExistStateSC = 1
+predictor.Predict = nop
+-> Input: 81.3 <-
+-> State: 81.3 <-
+w_time = 1
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+End loop
+-> Input: 81.4 <-
+-> State: 81.4 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 81.5 <-
+-> State: 81.5 <-
+w_time = 1
+-> Input: 81.6 <-
+-> State: 81.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 81.7 <-
+-> State: 81.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 81.8 <-
+-> State: 81.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 81.9 <-
+-> State: 81.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 81.10 <-
+-> State: 81.10 <-
+cpu.state = normal
+
+-> Input: 82.2 <-
+-> State: 82.2 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 82.3 <-
+-> State: 82.3 <-
+attacker.cmd = load
+victim.cmd = nop
+-> Input: 82.4 <-
+-> State: 82.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 82.5 <-
+-> State: 82.5 <-
+w_time = 1
+-> Input: 82.6 <-
+-> State: 82.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 82.7 <-
+-> State: 82.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 82.8 <-
+-> State: 82.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 82.9 <-
+-> State: 82.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 82.10 <-
+-> State: 82.10 <-
+cpu.state = normal
+
+-> Input: 83.3 <-
+-> State: 83.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 83.4 <-
+-> State: 83.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 83.5 <-
+-> State: 83.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 83.6 <-
+-> State: 83.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 83.7 <-
+-> State: 83.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 83.8 <-
+-> State: 83.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 83.9 <-
+-> State: 83.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 83.10 <-
+-> State: 83.10 <-
+cpu.state = normal
+
+-> Input: 84.3 <-
+-> State: 84.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 84.4 <-
+-> State: 84.4 <-
+attacker.cmd = store
+-> Input: 84.5 <-
+-> State: 84.5 <-
+w_time = 1
+-> Input: 84.6 <-
+-> State: 84.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 84.7 <-
+-> State: 84.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 84.8 <-
+-> State: 84.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 84.9 <-
+-> State: 84.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 84.10 <-
+-> State: 84.10 <-
+cpu.state = normal
+
+-> Input: 85.3 <-
+-> State: 85.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 85.4 <-
+-> State: 85.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 85.5 <-
+-> State: 85.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 85.6 <-
+-> State: 85.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 85.7 <-
+-> State: 85.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 85.8 <-
+-> State: 85.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 85.9 <-
+-> State: 85.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 85.10 <-
+-> State: 85.10 <-
+cpu.state = normal
+
+-> Input: 86.3 <-
+-> State: 86.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 86.4 <-
+-> State: 86.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 86.5 <-
+-> State: 86.5 <-
+w_time = 1
+-> Input: 86.6 <-
+-> State: 86.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 86.7 <-
+-> State: 86.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 86.8 <-
+-> State: 86.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 86.9 <-
+-> State: 86.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 86.10 <-
+-> State: 86.10 <-
+cpu.state = normal
+
+-> Input: 87.2 <-
+-> State: 87.2 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 87.3 <-
+-> State: 87.3 <-
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+-> Input: 87.4 <-
+-> State: 87.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 87.5 <-
+-> State: 87.5 <-
+w_time = 1
+-> Input: 87.6 <-
+-> State: 87.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 87.7 <-
+-> State: 87.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 87.8 <-
+-> State: 87.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 87.9 <-
+-> State: 87.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 87.10 <-
+-> State: 87.10 <-
+cpu.state = normal
+
+-> Input: 88.3 <-
+-> State: 88.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 88.4 <-
+-> State: 88.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 88.5 <-
+-> State: 88.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 88.6 <-
+-> State: 88.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 88.7 <-
+-> State: 88.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 88.8 <-
+-> State: 88.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 88.9 <-
+-> State: 88.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 88.10 <-
+-> State: 88.10 <-
+cpu.state = normal
+
+-> Input: 89.3 <-
+-> State: 89.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 89.4 <-
+-> State: 89.4 <-
+attacker.cmd = store
+-> Input: 89.5 <-
+-> State: 89.5 <-
+w_time = 1
+-> Input: 89.6 <-
+-> State: 89.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 89.7 <-
+-> State: 89.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 89.8 <-
+-> State: 89.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 89.9 <-
+-> State: 89.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 89.10 <-
+-> State: 89.10 <-
+cpu.state = normal
+
+-> Input: 90.3 <-
+-> State: 90.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 90.4 <-
+-> State: 90.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 90.5 <-
+-> State: 90.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 90.6 <-
+-> State: 90.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 90.7 <-
+-> State: 90.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 90.8 <-
+-> State: 90.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 90.9 <-
+-> State: 90.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 90.10 <-
+-> State: 90.10 <-
+cpu.state = normal
+
+-> Input: 91.3 <-
+-> State: 91.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 91.4 <-
+-> State: 91.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 91.5 <-
+-> State: 91.5 <-
+w_time = 1
+-> Input: 91.6 <-
+-> State: 91.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 91.7 <-
+-> State: 91.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 91.8 <-
+-> State: 91.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 91.9 <-
+-> State: 91.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 91.10 <-
+-> State: 91.10 <-
+cpu.state = normal
+
+-> Input: 92.2 <-
+-> State: 92.2 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = SC_addr
+victim.cmd = load
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 92.3 <-
+-> State: 92.3 <-
+attacker.cmd = load
+victim.cmd = nop
+-> Input: 92.4 <-
+-> State: 92.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 92.5 <-
+-> State: 92.5 <-
+w_time = 1
+-> Input: 92.6 <-
+-> State: 92.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 92.7 <-
+-> State: 92.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 92.8 <-
+-> State: 92.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 92.9 <-
+-> State: 92.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 92.10 <-
+-> State: 92.10 <-
+cpu.state = normal
+
+-> Input: 93.3 <-
+-> State: 93.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 93.4 <-
+-> State: 93.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 93.5 <-
+-> State: 93.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 93.6 <-
+-> State: 93.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 93.7 <-
+-> State: 93.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 93.8 <-
+-> State: 93.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 93.9 <-
+-> State: 93.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 93.10 <-
+-> State: 93.10 <-
+cpu.state = normal
+
+-> Input: 94.3 <-
+-> State: 94.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 94.4 <-
+-> State: 94.4 <-
+attacker.cmd = store
+-> Input: 94.5 <-
+-> State: 94.5 <-
+w_time = 1
+-> Input: 94.6 <-
+-> State: 94.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 94.7 <-
+-> State: 94.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 94.8 <-
+-> State: 94.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 94.9 <-
+-> State: 94.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 94.10 <-
+-> State: 94.10 <-
+cpu.state = normal
+
+-> Input: 95.3 <-
+-> State: 95.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 95.4 <-
+-> State: 95.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 95.5 <-
+-> State: 95.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 95.6 <-
+-> State: 95.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 95.7 <-
+-> State: 95.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 95.8 <-
+-> State: 95.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 95.9 <-
+-> State: 95.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 95.10 <-
+-> State: 95.10 <-
+cpu.state = normal
+
+-> Input: 96.3 <-
+-> State: 96.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 96.4 <-
+-> State: 96.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 96.5 <-
+-> State: 96.5 <-
+w_time = 1
+-> Input: 96.6 <-
+-> State: 96.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 96.7 <-
+-> State: 96.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 96.8 <-
+-> State: 96.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 96.9 <-
+-> State: 96.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 96.10 <-
+-> State: 96.10 <-
+cpu.state = normal
+
+-> Input: 97.2 <-
+-> State: 97.2 <-
+w_time = 0
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = load
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 97.3 <-
+-> State: 97.3 <-
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+-> Input: 97.4 <-
+-> State: 97.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+-> Input: 97.5 <-
+-> State: 97.5 <-
+w_time = 1
+-> Input: 97.6 <-
+-> State: 97.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 97.7 <-
+-> State: 97.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 97.8 <-
+-> State: 97.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 97.9 <-
+-> State: 97.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 97.10 <-
+-> State: 97.10 <-
+cpu.state = normal
+
+-> Input: 98.3 <-
+-> State: 98.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = SC_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 98.4 <-
+-> State: 98.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 98.5 <-
+-> State: 98.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 98.6 <-
+-> State: 98.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 98.7 <-
+-> State: 98.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 98.8 <-
+-> State: 98.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 98.9 <-
+-> State: 98.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 98.10 <-
+-> State: 98.10 <-
+cpu.state = normal
+
+-> Input: 99.3 <-
+-> State: 99.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 99.4 <-
+-> State: 99.4 <-
+attacker.cmd = store
+-> Input: 99.5 <-
+-> State: 99.5 <-
+w_time = 1
+-> Input: 99.6 <-
+-> State: 99.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 99.7 <-
+-> State: 99.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 99.8 <-
+-> State: 99.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 99.9 <-
+-> State: 99.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 99.10 <-
+-> State: 99.10 <-
+cpu.state = normal
+
+-> Input: 100.3 <-
+-> State: 100.3 <-
+w_time = 0
+attacker.cmd = branch
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 100.4 <-
+-> State: 100.4 <-
+attacker.cmd = store
+predictor.Predict = NTSuccess
+cpu.state = predict
+-> Input: 100.5 <-
+-> State: 100.5 <-
+w_time = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 100.6 <-
+-> State: 100.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 100.7 <-
+-> State: 100.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 100.8 <-
+-> State: 100.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 100.9 <-
+-> State: 100.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 100.10 <-
+-> State: 100.10 <-
+cpu.state = normal
+
+-> Input: 101.3 <-
+-> State: 101.3 <-
+w_time = 0
+attacker.cmd = load
+attacker.rw_addr = SC_addr
+victim.cmd = store
+cache.ExistStateSC = 1
+cache.ExistStateOT = 1
+predictor.Predict = nop
+cpu.state = normal
+-> Input: 101.4 <-
+-> State: 101.4 <-
+attacker.cmd = store
+attacker.rw_addr = OT_addr
+victim.cmd = nop
+-> Input: 101.5 <-
+-> State: 101.5 <-
+w_time = 1
+-> Input: 101.6 <-
+-> State: 101.6 <-
+w_time = 2
+cache.ExistStateSC = 0
+cpu.state = evict
+-> Input: 101.7 <-
+-> State: 101.7 <-
+attacker.cmd = branch
+victim.cmd = store
+-> Input: 101.8 <-
+-> State: 101.8 <-
+w_time = 0
+attacker.cmd = store
+cache.ExistStateSC = 1
+predictor.Predict = TFailed
+cpu.state = predict
+-> Input: 101.9 <-
+-> State: 101.9 <-
+attacker.cmd = nop
+victim.cmd = nop
+predictor.Predict = nop
+cpu.state = squash
+-> Input: 101.10 <-
+-> State: 101.10 <-
+cpu.state = normal

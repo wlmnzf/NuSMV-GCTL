@@ -1,0 +1,383 @@
+digraph Tree {
+
+    node [fontname="Arial"];
+
+"
+cache.ExistStateSC = FALSE
+
+cpu.state = normal
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = nop
+
+attacker.cmd = branch
+
+victim.cmd = nop
+
+ -> 
+cache.ExistStateSC = FALSE
+
+attacker.cmd = branch
+
+cpu.state = predict
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TFailed
+
+victim.cmd = load
+
+"
+"
+cache.ExistStateSC = FALSE
+
+attacker.cmd = branch
+
+cpu.state = predict
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TFailed
+
+victim.cmd = load
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = squash
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = load
+
+"
+"
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = squash
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = load
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = normal
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = load
+
+"
+"
+cache.ExistStateSC = FALSE
+
+cpu.state = normal
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = nop
+
+attacker.cmd = branch
+
+victim.cmd = nop
+
+ -> 
+cache.ExistStateSC = FALSE
+
+attacker.cmd = branch
+
+cpu.state = predict
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = load
+
+"
+"
+cache.ExistStateSC = FALSE
+
+attacker.cmd = branch
+
+cpu.state = predict
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = load
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = normal
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = load
+
+"
+"
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = normal
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = load
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = predict
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TFailed
+
+victim.cmd = branch
+
+"
+"
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = predict
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TFailed
+
+victim.cmd = branch
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = squash
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = branch
+
+"
+"
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = squash
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = branch
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = normal
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = TSuccess
+
+victim.cmd = branch
+
+"
+"
+cache.ExistStateSC = FALSE
+
+cpu.state = normal
+
+cache.ExistStateOT = TRUE
+
+predictor.Predict = nop
+
+attacker.cmd = branch
+
+victim.cmd = nop
+
+ -> 
+cache.ExistStateSC = FALSE
+
+cache.ExistStateOT = TRUE
+
+cpu.state = predict
+
+attacker.cmd = flush
+
+predictor.Predict = TSuccess
+
+victim.cmd = load
+
+"
+"
+cache.ExistStateSC = FALSE
+
+cache.ExistStateOT = TRUE
+
+cpu.state = predict
+
+attacker.cmd = flush
+
+predictor.Predict = TSuccess
+
+victim.cmd = load
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = flush
+
+cpu.state = normal
+
+cache.ExistStateOT = FALSE
+
+predictor.Predict = nop
+
+victim.cmd = load
+
+"
+"
+cache.ExistStateSC = TRUE
+
+attacker.cmd = flush
+
+cpu.state = normal
+
+cache.ExistStateOT = FALSE
+
+predictor.Predict = nop
+
+victim.cmd = load
+
+ -> 
+cache.ExistStateSC = TRUE
+
+cache.ExistStateOT = FALSE
+
+cpu.state = normal
+
+attacker.cmd = branch
+
+predictor.Predict = nop
+
+victim.cmd = branch
+
+"
+"
+cache.ExistStateSC = TRUE
+
+cache.ExistStateOT = FALSE
+
+cpu.state = normal
+
+attacker.cmd = branch
+
+predictor.Predict = nop
+
+victim.cmd = branch
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = predict
+
+cache.ExistStateOT = FALSE
+
+predictor.Predict = TFailed
+
+victim.cmd = branch
+
+"
+"
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = predict
+
+cache.ExistStateOT = FALSE
+
+predictor.Predict = TFailed
+
+victim.cmd = branch
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = squash
+
+cache.ExistStateOT = FALSE
+
+predictor.Predict = TSuccess
+
+victim.cmd = branch
+
+"
+"
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = squash
+
+cache.ExistStateOT = FALSE
+
+predictor.Predict = TSuccess
+
+victim.cmd = branch
+
+ -> 
+cache.ExistStateSC = TRUE
+
+attacker.cmd = branch
+
+cpu.state = normal
+
+cache.ExistStateOT = FALSE
+
+predictor.Predict = TSuccess
+
+victim.cmd = branch
+
+"
+}

@@ -1,0 +1,13253 @@
+ strict digraph prof {
+
+    node [fontname="Arial"];
+
+"
+evict
+" [style=filled,fillcolor=yellow,shape=box,width=5]
+
+"
+squash
+" [style=filled,fillcolor=yellow,shape=box,width=5]
+
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 2
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 2
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = evict
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = evict
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = evict
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = evict
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = predict
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = predict
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = squash
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = squash
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cache.ExistStateOT = 1
+
+3:7:cpu.state = normal
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cache.ExistStateOT = 1
+
+3:7:cpu.state = normal
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = evict
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = evict
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = evict
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = evict
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = predict
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = predict
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = squash
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = squash
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cache.ExistStateOT = 1
+
+3:7:cpu.state = normal
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cache.ExistStateOT = 1
+
+3:7:cpu.state = normal
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 0
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 1
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = evict
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = evict
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 2
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = evict
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 2
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = evict
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = predict
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = predict
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = squash
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = squash
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cache.ExistStateOT = 1
+
+3:7:cpu.state = normal
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cache.ExistStateOT = 1
+
+3:7:cpu.state = normal
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 2
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 2
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = evict
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = evict
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = evict
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = evict
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = predict
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = predict
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = squash
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cache.ExistStateOT = 1
+
+2:7:cpu.state = squash
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cache.ExistStateOT = 1
+
+3:7:cpu.state = normal
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cache.ExistStateOT = 1
+
+3:7:cpu.state = normal
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 0
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 0
+
+1:7:cache.ExistStateOT = 1
+
+1:7:cpu.state = normal
+
+1:7:predictor.Predict = NTSuccess
+
+" -> "
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 1
+
+1:7:w_time = 1
+
+1:7:cpu.state = normal
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:7:cache.ExistStateSC = 0
+
+1:7:w_time = 2
+
+1:7:cpu.state = evict
+
+1:7:cache.ExistStateOT = 1
+
+1:7:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 2
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:7:cache.ExistStateSC = 0
+
+2:7:w_time = 2
+
+2:7:cpu.state = evict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = predict
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = TFailed
+
+" -> "
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:7:cache.ExistStateSC = 1
+
+2:7:w_time = 0
+
+2:7:cpu.state = squash
+
+2:7:cache.ExistStateOT = 1
+
+2:7:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:7:cache.ExistStateSC = 1
+
+3:7:w_time = 0
+
+3:7:cpu.state = normal
+
+3:7:cache.ExistStateOT = 1
+
+3:7:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = load
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = evict
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = evict
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = predict
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cache.ExistStateOT = 1
+
+2:9:cpu.state = squash
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cache.ExistStateOT = 1
+
+3:9:cpu.state = normal
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+"
+start
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+"
+[ label="" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 0
+
+1:9:cache.ExistStateOT = 1
+
+1:9:cpu.state = normal
+
+1:9:predictor.Predict = NTSuccess
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = load
+victim.cmd = store
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 0
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 1
+
+1:9:w_time = 1
+
+1:9:cpu.state = normal
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+1:9:cache.ExistStateSC = 0
+
+1:9:w_time = 2
+
+1:9:cpu.state = evict
+
+1:9:cache.ExistStateOT = 1
+
+1:9:predictor.Predict = nop
+
+" -> "
+evict
+"   -> "
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = nop
+" ]
+"
+2:9:cache.ExistStateSC = 0
+
+2:9:w_time = 2
+
+2:9:cpu.state = evict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+"
+[ label="attacker.cmd = branch
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = predict
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = TFailed
+
+" -> "
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = store
+victim.cmd = store
+" ]
+"
+2:9:cache.ExistStateSC = 1
+
+2:9:w_time = 0
+
+2:9:cpu.state = squash
+
+2:9:cache.ExistStateOT = 1
+
+2:9:predictor.Predict = nop
+
+" -> "
+squash
+"   -> "
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+"
+[ label="attacker.cmd = nop
+victim.cmd = nop
+" ]
+"
+3:9:cache.ExistStateSC = 1
+
+3:9:w_time = 0
+
+3:9:cpu.state = normal
+
+3:9:cache.ExistStateOT = 1
+
+3:9:predictor.Predict = nop
+
+" -> "Danger"
+10
+9
+}

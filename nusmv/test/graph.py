@@ -3,6 +3,7 @@
 import re;
 import sys;
 import os;
+import copy;
 
 class Trace:
     def __init__(self):  
@@ -38,7 +39,7 @@ phase_key=["attacker.cmd","victim.cmd","cpu.state","cpu.state"]
 phase_value=["flush","flush","evict","squash"]
 
 phase_target_key=["cache.ExistStateSC","cache.ExistStateSC","cache.ExistStateSC","cache.ExistStateSC"];
-phase_target_value=["FALSE","FALSE","FALSE","TRUE"];
+phase_target_value=["0","0","0","1"];
 
 # phase_evict_index=[-1,-1,-1,-1]
 
@@ -47,11 +48,15 @@ phase_target_value=["FALSE","FALSE","FALSE","TRUE"];
 
 def file2list(fdir):
 	files = os.listdir(fdir)
+
+	# fdir="."
+	# files=["F00.smv.ce"]
+
 	cnt=0
 	multi_counterexample_path_list=[]
 	for fpath in files:
 		f = open(fdir+'/'+ fpath, 'r')
-		multi_counterexample=f.read().replace('\n','').replace('\t','')
+		multi_counterexample=f.read().replace('\n',' ').replace('\t','')
 		# print(multi_counterexample)
 		pattern = re.compile(r'-> State: ([0-9]*).([0-9]*) <-([\s|_|.|=|0-9A-Za-z]*)')
 		results=re.findall(pattern,multi_counterexample)
@@ -78,12 +83,22 @@ def file2list(fdir):
 			# print(states)
 			trace.trace_state_dic=states
 
+
+            #从这里下手 将缺少的状态填充完毕
 			if(index_current!=index_last):
 				multi_counterexample_path_list.append(counterexample);
+				# print(len(counterexample))
 				counterexample=[];
 				index_last=index_current;
 				cnt=cnt+1
 				trace.trace_index=cnt
+
+				for path_fill_i in range(int(trace.trace_state_index)-1):
+					fill_trace = Trace()
+					fill_trace.trace_index=cnt
+					fill_trace.trace_state_index=path_fill_i+1
+					fill_trace.trace_state_dic=multi_counterexample_path_list[-1][path_fill_i].trace_state_dic.copy()
+					counterexample.append(fill_trace)
 
 			counterexample.append(trace)
 		if(len(counterexample)>0):
@@ -163,8 +178,8 @@ def generate_graph(multi_counterexample_path_list,length):
 	for i in range(len(phase_key)):
 		print("\"\n%s\n\" [style=filled,fillcolor=yellow,shape=box,width=5]\n" %(phase_value[i]))
 
-	if(length>len(multi_counterexample_path_list)):
-		length=len(multi_counterexample_path_list)
+	# if(length>len(multi_counterexample_path_list)):
+	# 	length=len(multi_counterexample_path_list)
 
 
 
@@ -172,7 +187,8 @@ def generate_graph(multi_counterexample_path_list,length):
 		# every counterexample
 		len_j=len(multi_counterexample_path_list[i])
 		if(len_j>length):
-			# print("jjjjjjjj");
+			print(len_j);
+			print(length)
 			break;
 		phase_id=1
 		for j in range(len_j):
@@ -246,11 +262,25 @@ def generate_graph(multi_counterexample_path_list,length):
 
 def main(argv):
 	multi_counterexample_path_list=file2list('ce')
+	# for i in range(2):
+	# 	print(len(multi_counterexample_path_list[i]))
+	# 	for j in range(len(multi_counterexample_path_list[i])):
+	# 		print(multi_counterexample_path_list[i][j].trace_state_dic);
+
+
+
 	if(len(multi_counterexample_path_list)==0):
 		print("PASS\n");
 		return;
 	multi_counterexample_path_list=fill_states(multi_counterexample_path_list);
+	# for i in range(2):
+	# 	print(len(multi_counterexample_path_list[i]))
+	# 	for j in range(len(multi_counterexample_path_list[i])):
+	# 		print(multi_counterexample_path_list[i][j].trace_state_dic);
+	# print(multi_counterexample_path_list[0][0]);
 	generate_graph(multi_counterexample_path_list,9)
+
+
 
 	# for i in range(100):
 	# 	print(len(multi_counterexample_path_list[i]))
